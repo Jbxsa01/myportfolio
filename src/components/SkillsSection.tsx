@@ -64,10 +64,10 @@ const SkillsSection: React.FC = () => {
     <AnimatedSection id="skills" className="section-container" animation="slide-up">
       <div className="text-center mb-16">
         <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
-          Compétences
+          Mes Compétences
         </h2>
         <p className="section-subtitle text-justify">
-          Un aperçu des technologies et outils que je maîtrise.
+          Découvrez mes compétences techniques et professionnelles
         </p>
       </div>
 

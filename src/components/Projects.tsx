@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import ProjectCard from './ProjectCard';
@@ -47,8 +46,8 @@ const Projects: React.FC = () => {
       <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
         Mes Projets
       </h2>
-      <p className="section-subtitle">
-        Découvrez quelques-uns des projets sur lesquels j'ai travaillé.
+      <p className="section-subtitle text-justify">
+        Découvrez mes réalisations et projets personnels
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

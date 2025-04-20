@@ -231,6 +231,13 @@ const ContactForm: React.FC = () => {
           )}
         </Button>
       </motion.form>
+
+      <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
+        Contactez-moi
+      </h2>
+      <p className="section-subtitle text-justify">
+        N'hésitez pas à me contacter pour discuter de vos projets
+      </p>
     </div>
   );
 };

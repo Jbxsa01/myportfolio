@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { GraduationCap, Code, Award, BookOpen, Calendar, GanttChart } from 'lucide-react';
@@ -84,7 +83,7 @@ const Experience: React.FC = () => {
       <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
         Parcours
       </h2>
-      <p className="section-subtitle">
+      <p className="section-subtitle text-justify">
         Mon parcours académique, professionnel et mes certifications.
       </p>
       
