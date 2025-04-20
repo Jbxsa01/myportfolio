@@ -124,6 +124,16 @@
   .nav-link-primary {
     @apply px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors;
   }
+
+  .text-justify {
+    text-align: justify;
+  }
+  
+  .text-justify p, 
+  .text-justify li, 
+  .text-justify div {
+    text-align: justify;
+  }
 }
 
 /* Patterns */

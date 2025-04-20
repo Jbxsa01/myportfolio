@@ -38,7 +38,7 @@ const ContactSection: React.FC = () => {
         <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
           Contact
         </h2>
-        <p className="section-subtitle">
+        <p className="section-subtitle text-justify">
           N'hésitez pas à me contacter pour discuter de vos projets.
         </p>
       </div>
@@ -67,7 +67,7 @@ const ContactSection: React.FC = () => {
                   {info.icon}
                   <div>
                     <h3 className="font-semibold text-gray-800">{info.title}</h3>
-                    <p className="text-gray-600">{info.value}</p>
+                    <p className="text-gray-600 text-justify">{info.value}</p>
                   </div>
                 </div>
               </motion.a>
@@ -81,7 +81,7 @@ const ContactSection: React.FC = () => {
             className="somagec-card p-6"
           >
             <h3 className="text-xl font-semibold mb-4 text-primary">Pourquoi me contacter ?</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-justify">
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-primary rounded-full" />
                 <span>Discussion de projets web</span>

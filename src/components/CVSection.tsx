@@ -78,7 +78,7 @@ const CVSection: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
           />
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto text-justify">
           Découvrez mon parcours professionnel et mes compétences.
         </p>
       </motion.div>
@@ -153,8 +153,8 @@ const CVSection: React.FC = () => {
                     <motion.div variants={containerVariants} initial="hidden" animate="visible">
                       <motion.div variants={itemVariants} className="mb-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Développeuse Full Stack Junior</h4>
-                        <p className="text-gray-600 text-sm">2023 - Présent</p>
-                        <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <p className="text-gray-600 text-sm text-justify">2023 - Présent</p>
+                        <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1 text-justify">
                           <li>Développement d'applications web modernes</li>
                           <li>Utilisation de React, Node.js et MongoDB</li>
                           <li>Collaboration en équipe avec méthodologie Agile</li>
@@ -162,8 +162,8 @@ const CVSection: React.FC = () => {
                       </motion.div>
                       <motion.div variants={itemVariants}>
                         <h4 className="font-semibold text-gray-800 mb-2">Stage en développement web</h4>
-                        <p className="text-gray-600 text-sm">2022 - 2023</p>
-                        <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <p className="text-gray-600 text-sm text-justify">2022 - 2023</p>
+                        <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1 text-justify">
                           <li>Création d'interfaces utilisateur responsives</li>
                           <li>Intégration d'APIs RESTful</li>
                           <li>Optimisation des performances</li>
@@ -176,13 +176,13 @@ const CVSection: React.FC = () => {
                     <motion.div variants={containerVariants} initial="hidden" animate="visible">
                       <motion.div variants={itemVariants} className="mb-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Master en Informatique</h4>
-                        <p className="text-gray-600 text-sm">2021 - 2023</p>
-                        <p className="text-gray-600 mt-2">Spécialisation en développement web et applications mobiles</p>
+                        <p className="text-gray-600 text-sm text-justify">2021 - 2023</p>
+                        <p className="text-gray-600 mt-2 text-justify">Spécialisation en développement web et applications mobiles</p>
                       </motion.div>
                       <motion.div variants={itemVariants}>
                         <h4 className="font-semibold text-gray-800 mb-2">Licence en Informatique</h4>
-                        <p className="text-gray-600 text-sm">2018 - 2021</p>
-                        <p className="text-gray-600 mt-2">Formation générale en sciences informatiques</p>
+                        <p className="text-gray-600 text-sm text-justify">2018 - 2021</p>
+                        <p className="text-gray-600 mt-2 text-justify">Formation générale en sciences informatiques</p>
                       </motion.div>
                     </motion.div>
                   )}
@@ -191,7 +191,7 @@ const CVSection: React.FC = () => {
                     <motion.div variants={containerVariants} initial="hidden" animate="visible">
                       <motion.div variants={itemVariants} className="mb-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Langages de programmation</h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 text-justify">
                           <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript</span>
                           <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">TypeScript</span>
                           <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">PHP</span>
@@ -200,7 +200,7 @@ const CVSection: React.FC = () => {
                       </motion.div>
                       <motion.div variants={itemVariants}>
                         <h4 className="font-semibold text-gray-800 mb-2">Frameworks & Bibliothèques</h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 text-justify">
                           <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">React</span>
                           <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Node.js</span>
                           <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Express</span>
@@ -214,7 +214,7 @@ const CVSection: React.FC = () => {
                     <motion.div variants={containerVariants} initial="hidden" animate="visible">
                       <motion.div variants={itemVariants} className="mb-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Projets notables</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <ul className="list-disc list-inside text-gray-600 space-y-2 text-justify">
                           <li>Application e-commerce avec React et Node.js</li>
                           <li>Système de gestion de contenu personnalisé</li>
                           <li>Application mobile de suivi d'activité</li>
@@ -222,7 +222,7 @@ const CVSection: React.FC = () => {
                       </motion.div>
                       <motion.div variants={itemVariants}>
                         <h4 className="font-semibold text-gray-800 mb-2">Certifications</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <ul className="list-disc list-inside text-gray-600 space-y-2 text-justify">
                           <li>AWS Certified Cloud Practitioner</li>
                           <li>Google Developer Certification</li>
                           <li>MongoDB Certified Developer</li>
@@ -248,7 +248,7 @@ const CVSection: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Mail size={16} />
-                    <span className="text-sm">contact@example.com</span>
+                    <span className="text-sm text-justify">contact@example.com</span>
                   </motion.button>
                   <motion.button
                     className="flex items-center gap-1 text-gray-600 hover:text-primary transition-colors"
@@ -257,7 +257,7 @@ const CVSection: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Phone size={16} />
-                    <span className="text-sm">+33 6 12 34 56 78</span>
+                    <span className="text-sm text-justify">+33 6 12 34 56 78</span>
                   </motion.button>
                   <motion.button
                     className="flex items-center gap-1 text-gray-600 hover:text-primary transition-colors"
@@ -266,7 +266,7 @@ const CVSection: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <MapPin size={16} />
-                    <span className="text-sm">Paris, France</span>
+                    <span className="text-sm text-justify">Paris, France</span>
                   </motion.button>
                 </div>
               </motion.div>
@@ -299,7 +299,7 @@ const CVSection: React.FC = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3 className="text-xl font-semibold mb-4 text-primary">Télécharger mon CV</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-justify">
               Consultez mon CV complet pour en savoir plus sur mon parcours, mes compétences et mes réalisations.
             </p>
             <DownloadCVButton />
@@ -311,7 +311,7 @@ const CVSection: React.FC = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3 className="text-xl font-semibold mb-4 text-primary">Aperçu en ligne</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-justify">
               Vous pouvez également consulter une version en ligne de mon CV.
             </p>
             <motion.button
@@ -331,11 +331,11 @@ const CVSection: React.FC = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3 className="text-xl font-semibold mb-4 text-primary">Disponibilité</h3>
-            <div className="flex items-center gap-2 text-gray-600 mb-4">
+            <div className="flex items-center gap-2 text-gray-600 mb-4 text-justify">
               <Calendar size={20} className="text-primary" />
               <span>Disponible pour un stage à partir de juin 2024</span>
             </div>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-justify">
               Je suis à la recherche d'un stage de 2 mois en développement web et IA.
               N'hésitez pas à me contacter pour discuter d'opportunités de collaboration.
             </p>

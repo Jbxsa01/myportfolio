@@ -37,7 +37,7 @@ const HeaderSection: React.FC = () => {
             Bonjour, je suis <span className="text-primary">Asmaa</span>
           </h1>
           
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 text-justify">
             Développeuse Full Stack passionnée par la création d'applications web modernes et performantes.
           </p>
           

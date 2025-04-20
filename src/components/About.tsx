@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { Briefcase, GraduationCap, Award } from 'lucide-react';
@@ -22,11 +21,11 @@ const About: React.FC = () => {
             </div>
             <h3 className="text-2xl font-display font-semibold text-primary">Mon Parcours</h3>
           </div>
-          <p className="text-muted-foreground leading-relaxed border-l-4 border-secondary pl-4 py-2">
+          <p className="text-muted-foreground leading-relaxed border-l-4 border-secondary pl-4 py-2 text-justify">
             Actuellement en 4ème année à l'EMSI en filière Ingénierie Informatique et Réseaux (IIR), 
             je me spécialise dans le développement d'applications et l'administration de systèmes et réseaux.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed text-justify">
             Ma formation polyvalente me permet d'avoir une vision complète des projets informatiques, 
             du développement au déploiement. Ma passion pour les nouvelles technologies et ma curiosité 
             m'ont permis de développer de solides compétences techniques à travers divers projets académiques et personnels.
@@ -62,7 +61,7 @@ const About: React.FC = () => {
                     SOMAGEC GROUP | Juillet 2024 - Août 2024
                   </p>
                   <Separator className="my-4" />
-                  <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5">
+                  <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5 text-justify">
                     <li>Développement d'une application de gestion des équipements et ressources</li>
                     <li>Configuration et gestion de serveurs virtuels (VMware, Hyper-V, Proxmox)</li>
                     <li>Installation et brassage de câbles réseaux</li>
