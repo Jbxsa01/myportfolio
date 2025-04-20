@@ -29,6 +29,9 @@ dist-ssr
 .env.development
 .env.production
 
+# API Keys and Secrets
+public/key.txt
+
 # Dependencies
 /node_modules
 /.pnp
