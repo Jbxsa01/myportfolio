@@ -1,0 +1,18 @@
+# Configuration PHP
+AddType application/x-httpd-php .php
+AddHandler application/x-httpd-php .php
+
+# Autoriser les requêtes CORS
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /myportfolio/public/
+  
+  # Si le fichier ou répertoire n'existe pas, rediriger vers index.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule> 

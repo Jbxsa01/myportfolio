@@ -1,0 +1,67 @@
+[2025-04-07 15:31:18] Script started
+[2025-04-07 15:31:18] Database initialized
+[2025-04-07 15:31:18] Invalid request method: OPTIONS
+[2025-04-07 15:31:18] Script started
+[2025-04-07 15:31:18] Database initialized
+[2025-04-07 15:31:18] POST request received
+[2025-04-07 15:31:18] Raw input: {"name":"bjane","email":"sazzed@gmail.com","subject":"Envoi de notre travail sur l’IA en médecine","message":"dqfqsdfsd"}
+[2025-04-07 15:31:18] Form data extracted: name=bjane, email=sazzed@gmail.com, subject=Envoi de notre travail sur l’IA en médecine
+[2025-04-07 15:31:18] Database connection established
+[2025-04-07 15:31:18] Message inserted into database
+[2025-04-07 15:31:22] Script started
+[2025-04-07 15:31:22] Database initialized
+[2025-04-07 15:31:22] POST request received
+[2025-04-07 15:31:22] Raw input: {"name":"bjane","email":"sazzed@gmail.com","subject":"Envoi de notre travail sur l’IA en médecine","message":"dqfqsdfsd"}
+[2025-04-07 15:31:22] Form data extracted: name=bjane, email=sazzed@gmail.com, subject=Envoi de notre travail sur l’IA en médecine
+[2025-04-07 15:31:22] Database connection established
+[2025-04-07 15:31:22] Message inserted into database
+[2025-04-07 15:31:36] Script started
+[2025-04-07 15:31:36] Database initialized
+[2025-04-07 15:31:36] Invalid request method: OPTIONS
+[2025-04-07 15:31:36] Script started
+[2025-04-07 15:31:36] Database initialized
+[2025-04-07 15:31:36] POST request received
+[2025-04-07 15:31:36] Raw input: {"name":"eladlouni","email":"bjane@gmail.com","subject":"Envoi de notre travail sur l’IA en médecine","message":"bvhjvhj"}
+[2025-04-07 15:31:36] Form data extracted: name=eladlouni, email=bjane@gmail.com, subject=Envoi de notre travail sur l’IA en médecine
+[2025-04-07 15:31:36] Database connection established
+[2025-04-07 15:31:36] Message inserted into database
+[2025-04-07 15:33:39] Script started
+[2025-04-07 15:33:39] Database initialized
+[2025-04-07 15:33:39] Invalid request method: OPTIONS
+[2025-04-07 15:33:39] Script started
+[2025-04-07 15:33:39] Database initialized
+[2025-04-07 15:33:39] POST request received
+[2025-04-07 15:33:39] Raw input: {"name":"eladlouni","email":"bjane@gmail.com","subject":"Envoi de notre travail sur l’IA en médecine","message":"bvhjvhj"}
+[2025-04-07 15:33:39] Form data extracted: name=eladlouni, email=bjane@gmail.com, subject=Envoi de notre travail sur l’IA en médecine
+[2025-04-07 15:33:39] Database connection established
+[2025-04-07 15:33:39] Message inserted into database
+[2025-04-07 17:26:12] Script started
+[2025-04-07 17:26:12] Database initialized
+[2025-04-07 17:26:12] Invalid request method: OPTIONS
+[2025-04-07 17:26:12] Script started
+[2025-04-07 17:26:12] Database initialized
+[2025-04-07 17:26:12] POST request received
+[2025-04-07 17:26:12] Raw input: {"name":"elkhaoudi","email":"bjane.asmaa1@gmail.com","subject":"Envoi de notre travail sur l’IA en médecineeeefsdf","message":"sdffsdds"}
+[2025-04-07 17:26:12] Form data extracted: name=elkhaoudi, email=bjane.asmaa1@gmail.com, subject=Envoi de notre travail sur l’IA en médecineeeefsdf
+[2025-04-07 17:26:12] Database connection established
+[2025-04-07 17:26:12] Message inserted into database
+[2025-04-20 04:32:07] Script started
+[2025-04-20 04:32:07] Database initialized
+[2025-04-20 04:32:07] Invalid request method: OPTIONS
+[2025-04-20 04:32:07] Script started
+[2025-04-20 04:32:07] Database initialized
+[2025-04-20 04:32:07] POST request received
+[2025-04-20 04:32:07] Raw input: {"name":"fhg","email":"bjane@gmail.com","subject":"gdgfh","message":"dbfg"}
+[2025-04-20 04:32:07] Form data extracted: name=fhg, email=bjane@gmail.com, subject=gdgfh
+[2025-04-20 04:32:07] Database connection established
+[2025-04-20 04:32:07] Message inserted into database
+[2025-04-20 11:48:18] Script started
+[2025-04-20 11:48:18] Database initialized
+[2025-04-20 11:48:18] Invalid request method: OPTIONS
+[2025-04-20 11:48:18] Script started
+[2025-04-20 11:48:18] Database initialized
+[2025-04-20 11:48:18] POST request received
+[2025-04-20 11:48:18] Raw input: {"name":"ait menssour","email":"aitmenssour@gmail.com","subject":"je test le backend","message":"tama7nachtinooo"}
+[2025-04-20 11:48:18] Form data extracted: name=ait menssour, email=aitmenssour@gmail.com, subject=je test le backend
+[2025-04-20 11:48:18] Database connection established
+[2025-04-20 11:48:18] Message inserted into database

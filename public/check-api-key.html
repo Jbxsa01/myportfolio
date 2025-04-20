@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de la clé API OpenAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .instructions {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vérification de la clé API OpenAI</h1>
+    
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <p>Cette page vous permet de vérifier si votre clé API OpenAI est correctement configurée dans le navigateur.</p>
+        <ol>
+            <li>Entrez votre clé API OpenAI dans le champ ci-dessous</li>
+            <li>Cliquez sur "Enregistrer la clé"</li>
+            <li>Vérifiez que la clé a bien été enregistrée</li>
+            <li>Retournez à votre portfolio et essayez à nouveau le chat</li>
+        </ol>
+    </div>
+    
+    <div class="container">
+        <h2>Configuration de la clé API</h2>
+        <div id="status">Vérification de la clé API...</div>
+        <div>
+            <label for="apiKey">Clé API OpenAI:</label>
+            <input type="text" id="apiKey" placeholder="sk-..." />
+        </div>
+        <button id="saveButton">Enregistrer la clé</button>
+        <button id="clearButton">Effacer la clé</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('status');
+            const apiKeyInput = document.getElementById('apiKey');
+            const saveButton = document.getElementById('saveButton');
+            const clearButton = document.getElementById('clearButton');
+            
+            // Vérifier si la clé existe déjà
+            const existingKey = localStorage.getItem('openai_api_key');
+            if (existingKey) {
+                statusDiv.innerHTML = '<span class="success">✅ Clé API trouvée dans le stockage local</span>';
+                apiKeyInput.value = existingKey;
+            } else {
+                statusDiv.innerHTML = '<span class="error">❌ Aucune clé API trouvée dans le stockage local</span>';
+            }
+            
+            // Enregistrer la clé
+            saveButton.addEventListener('click', function() {
+                const apiKey = apiKeyInput.value.trim();
+                if (apiKey) {
+                    localStorage.setItem('openai_api_key', apiKey);
+                    statusDiv.innerHTML = '<span class="success">✅ Clé API enregistrée avec succès!</span>';
+                } else {
+                    statusDiv.innerHTML = '<span class="error">❌ Veuillez entrer une clé API valide</span>';
+                }
+            });
+            
+            // Effacer la clé
+            clearButton.addEventListener('click', function() {
+                localStorage.removeItem('openai_api_key');
+                apiKeyInput.value = '';
+                statusDiv.innerHTML = '<span class="success">✅ Clé API effacée avec succès!</span>';
+            });
+        });
+    </script>
+</body>
+</html> 
