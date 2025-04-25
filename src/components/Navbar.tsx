@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, Code, User, Briefcase, Cpu, MessageSquare, Github, Linkedin, GanttChart } from 'lucide-react';
+import { Menu, X, Code, User, Briefcase, Cpu, MessageSquare, Github, Linkedin, GanttChart, Palette } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onSettingsClick: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onSettingsClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
@@ -66,6 +70,13 @@ const Navbar: React.FC = () => {
             <a href="https://www.linkedin.com/in/bjaneasmaa/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
               <Linkedin size={20} />
             </a>
+            <button 
+              onClick={onSettingsClick}
+              className="text-gray-500 hover:text-primary transition-colors"
+              aria-label="Paramètres d'apparence"
+            >
+              <Palette size={20} />
+            </button>
           </div>
         </div>
         
@@ -145,6 +156,16 @@ const Navbar: React.FC = () => {
               >
                 <Linkedin size={20} className="text-gray-600" />
               </a>
+              <button 
+                onClick={() => {
+                  onSettingsClick();
+                  setIsOpen(false);
+                }}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Paramètres d'apparence"
+              >
+                <Palette size={20} className="text-gray-600" />
+              </button>
             </div>
           </div>
         </div>

@@ -1,8 +1,6 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -81,6 +79,9 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'tech-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233060A9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+				'circuit-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233060A9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+				'dots-pattern': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233060A9' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E\")",
 			},
 			keyframes: {
 				'accordion-down': {
@@ -122,6 +123,29 @@ export default {
 				'pulse': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.5' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'bounce-slow': {
+					'0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+					'50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				'glow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5', boxShadow: '0 0 20px 5px rgba(59, 130, 246, 0.5)' }
+				},
+				'konami': {
+					'0%': { transform: 'scale(1)', filter: 'hue-rotate(0deg)' },
+					'25%': { transform: 'scale(1.1)', filter: 'hue-rotate(90deg)' },
+					'50%': { transform: 'scale(1)', filter: 'hue-rotate(180deg)' },
+					'75%': { transform: 'scale(1.1)', filter: 'hue-rotate(270deg)' },
+					'100%': { transform: 'scale(1)', filter: 'hue-rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -134,7 +158,19 @@ export default {
 				'float': 'float 4s ease-in-out infinite',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'pulse': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'spin-slow': 'spin-slow 3s linear infinite',
+				'bounce-slow': 'bounce-slow 3s infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'konami': 'konami 0.5s ease-in-out infinite'
+			},
+			boxShadow: {
+				'glow': '0 0 15px rgba(59, 130, 246, 0.5)',
+				'glow-lg': '0 0 30px rgba(59, 130, 246, 0.7)',
+			},
+			backdropBlur: {
+				xs: '2px',
 			},
 		}
 	},
