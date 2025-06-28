@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Certification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .cert-template {
+            width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .cert-template::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        .header {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+        .issuer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+        }
+        .date {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .instructions {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .instructions h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .instructions ul {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="cert-template">
+        <div class="header">
+            <div class="issuer">IBM</div>
+            <div class="title">Containers & Kubernetes Essentials</div>
+        </div>
+        <div class="footer">
+            <div class="date">Mai 2025</div>
+            <div class="badge">CERTIFIÉ</div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>Instructions pour créer vos images de certifications :</h3>
+        <ul>
+            <li><strong>Téléchargez vos certificats</strong> depuis Coursera, LinkedIn Learning, etc.</li>
+            <li><strong>Convertissez en JPG</strong> si nécessaire (format recommandé)</li>
+            <li><strong>Redimensionnez</strong> à 400x300px pour une taille optimale</li>
+            <li><strong>Nommez selon le format</strong> : [issuer]-[technology].jpg</li>
+            <li><strong>Placez dans le dossier</strong> : public/certifications/images/</li>
+        </ul>
+        
+        <h4>Exemples de noms de fichiers :</h4>
+        <ul>
+            <li>ibm-containers-kubernetes.jpg</li>
+            <li>whizlabs-azure-networks.jpg</li>
+            <li>upenn-java-oop.jpg</li>
+            <li>meta-react-basics.jpg</li>
+            <li>umich-javascript-interactivity.jpg</li>
+        </ul>
+    </div>
+</body>
+</html> 

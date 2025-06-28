@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Database, Server, BookOpen, GitBranch, Terminal, Cpu, Layers, BrainCircuit } from 'lucide-react';
+import { Code, Database, Server, BookOpen, GitBranch, Terminal, Cpu, Layers, BrainCircuit, Settings } from 'lucide-react';
 import SkillCard from './ui/SkillCard';
 import AnimatedSection from './AnimatedSection';
 
@@ -53,6 +53,15 @@ const skillCategories: SkillCategory[] = [
       { icon: GitBranch, title: "Docker", level: 80, color: "primary" },
       { icon: GitBranch, title: "Git", level: 85, color: "secondary" },
       { icon: GitBranch, title: "CI/CD", level: 75, color: "success" }
+    ]
+  },
+  {
+    title: "Méthodologies",
+    icon: Settings,
+    skills: [
+      { icon: Settings, title: "Agile", level: 85, color: "primary" },
+      { icon: Settings, title: "Scrum", level: 80, color: "secondary" },
+      { icon: Settings, title: "Kanban", level: 75, color: "success" }
     ]
   }
 ];

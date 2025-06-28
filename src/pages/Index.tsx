@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -66,6 +67,7 @@ const sections = [
   { id: 'experience', label: 'Expérience', icon: <Briefcase size={16} /> },
   { id: 'projects', label: 'Projets', icon: <Code size={16} /> },
   { id: 'skills', label: 'Compétences', icon: <Wrench size={16} /> },
+  { id: 'certifications', label: 'Certifications', icon: <Award size={16} /> },
   { id: 'cv', label: 'CV', icon: <FileText size={16} /> },
   { id: 'contact', label: 'Contact', icon: <Mail size={16} /> },
 ];
@@ -548,6 +550,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
         <Experience />
         <Projects />
         <Skills />
+        <Certifications />
       <div ref={cvRef} id="cv" className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10 transform hover:scale-[1.02] transition-all duration-300 border border-gray-100 relative group">

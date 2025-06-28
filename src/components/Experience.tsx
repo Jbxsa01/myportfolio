@@ -24,52 +24,37 @@ const experienceData = [
   },
   {
     id: 2,
-    year: "2021",
-    title: "Intégration à l'EMSI",
-    institution: "École Marocaine des Sciences de l'Ingénieur",
-    details: "Début du parcours en Ingénierie Informatique et Réseaux",
-    icon: <GraduationCap className="text-primary" />,
+    year: "2021–2023",
+    title: "Classes préparatoires intégrées",
+    institution: "EMSI Casablanca",
+    details: "Formation scientifique et technique intensive, préparation au cycle ingénieur",
+    icon: <BookOpen className="text-primary" />,
     type: "education"
   },
   {
     id: 3,
-    year: "2022",
-    title: "Introduction to Java and Object-Oriented Programming",
-    institution: "Coursera",
-    details: "Certification en programmation Java et POO",
-    certificateLink: "https://www.coursera.org/account/accomplishments/records/KGRJCO03PUID",
-    icon: <Award className="text-secondary" />,
-    type: "certification"
+    year: "2023–2026",
+    title: "Cycle Ingénieur Informatique & Réseaux (MIAGE)",
+    institution: "EMSI Casablanca",
+    details: (
+      <>
+        <div>Spécialisation MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises)</div>
+        <div>Juin 2024 : Fin de 2<sup>e</sup> année du cycle ingénieur</div>
+        <div>Octobre 2024 : Entrée en 5<sup>e</sup> année (dernière année)</div>
+      </>
+    ),
+    icon: <Code className="text-primary" />,
+    type: "education"
   },
   {
     id: 4,
-    year: "2023",
-    title: "React Basics",
-    institution: "Coursera",
-    details: "Certification en développement avec React",
-    certificateLink: "https://www.coursera.org/account/accomplishments/records/VOTWKG2IVW4E",
-    icon: <Award className="text-secondary" />,
-    type: "certification"
-  },
-  {
-    id: 5,
-    year: "2023",
-    title: "Interactivity with JavaScript",
-    institution: "Coursera",
-    details: "Certification en JavaScript interactif",
-    certificateLink: "https://www.coursera.org/account/accomplishments/verify/AH42Z2KS5J27",
-    icon: <Award className="text-secondary" />,
-    type: "certification"
-  },
-  {
-    id: 6,
     year: "2024",
     title: "Stage en Réseau et Développement",
     institution: "SOMAGEC GROUP",
     details: "Développement d'application et administration réseau",
-    icon: <Code className="text-primary" />,
+    icon: <BookOpen className="text-secondary" />,
     type: "professional"
-  },
+  }
 ];
 
 const Experience: React.FC = () => {
@@ -122,66 +107,10 @@ const Experience: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">{item.details}</p>
-                {item.certificateLink && (
-                  <a 
-                    href={item.certificateLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-secondary flex items-center gap-1 mt-2 hover:underline"
-                  >
-                    <Award size={14} />
-                    Voir le certificat
-                  </a>
-                )}
               </CardContent>
             </Card>
           </div>
         ))}
-      </div>
-      
-      {/* Certifications Table */}
-      <div className="mt-20">
-        <div className="flex items-center gap-3 justify-center mb-6">
-          <BookOpen size={24} className="text-primary" />
-          <h3 className="text-2xl font-display font-semibold text-primary">Certifications</h3>
-        </div>
-        
-        <Card className="appear">
-          <CardContent className="p-0 overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[100px]">Année</TableHead>
-                  <TableHead>Certification</TableHead>
-                  <TableHead>Organisme</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {certifications.map(cert => (
-                  <TableRow key={cert.id} className="hover:bg-secondary/5">
-                    <TableCell className="font-medium">{cert.year}</TableCell>
-                    <TableCell>{cert.title}</TableCell>
-                    <TableCell>{cert.institution}</TableCell>
-                    <TableCell className="text-right">
-                      {cert.certificateLink && (
-                        <a 
-                          href={cert.certificateLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-sm text-secondary hover:underline inline-flex items-center gap-1"
-                        >
-                          <Award size={14} />
-                          Certificat
-                        </a>
-                      )}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
       </div>
     </AnimatedSection>
   );
