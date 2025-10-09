@@ -55,16 +55,28 @@ const skillCategories = [
     delay: 400
   },
   {
-    title: "Technologies",
-    icon: <Cpu className="text-primary" size={24} />,
-    skills: ["IA", "Big Data", "Arduino", "Virtualisation", "Cloud Computing"],
+    title: "Intelligence Artificielle",
+    icon: <BrainCircuit className="text-primary" size={24} />,
+    skills: ["OCR", "STT", "TTS", "Traitement du langage naturel", "Machine Learning", "Traduction automatique"],
     delay: 500
+  },
+  {
+    title: "Mobile & Technologies",
+    icon: <Cpu className="text-secondary" size={24} />,
+    skills: ["Développement Mobile", "Big Data", "Arduino", "Virtualisation", "Cloud Computing"],
+    delay: 550
+  },
+  {
+    title: "Gestion de Projet",
+    icon: <BookOpen className="text-primary" size={24} />,
+    skills: ["Cahiers des Charges", "Étude de marché", "Analyse des besoins", "Communication digitale", "Stratégies de communication"],
+    delay: 600
   },
   {
     title: "DevOps",
     icon: <GitBranch className="text-secondary" size={24} />,
     skills: ["Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Jenkins", "Git"],
-    delay: 600
+    delay: 650
   }
 ];
 

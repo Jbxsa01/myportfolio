@@ -31,14 +31,17 @@ const Navbar: React.FC<NavbarProps> = ({ onSettingsClick }) => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg shadow-md">
-            <Code size={20} />
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12">
+            <img 
+              src="/logos/BJANE ASMAA Monogram Option 4.png" 
+              alt="Bjane Asmaa Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
-          <span className="text-primary font-medium">Asmaa Bjane</span>
-          <div className="hidden sm:flex items-center ml-2 px-2 py-1 bg-primary/10 rounded text-xs text-primary font-medium">
-            <Code size={12} className="mr-1" />
-            <span>IIR Student</span>
+          <div className="flex flex-col">
+            <span className="text-gray-900 dark:text-white font-semibold text-lg">Bjane Asmaa</span>
+            <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">Software Engineer & AI Specialist</span>
           </div>
         </div>
         

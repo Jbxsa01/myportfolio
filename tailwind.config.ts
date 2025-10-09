@@ -62,13 +62,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				somagec: {
-					blue: '#3060A9',
-					orange: '#F5A623'
+					blue: '#000000',
+					orange: '#FFFFFF'
 				}
 			},
 			fontFamily: {
-				sans: ['Poppins', 'Inter', 'sans-serif'],
-				display: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Lora', 'Playfair Display', 'serif'],
 				mono: ['Fira Code', 'Space Mono', 'monospace'],
 			},
 			borderRadius: {

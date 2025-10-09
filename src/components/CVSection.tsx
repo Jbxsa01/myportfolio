@@ -62,7 +62,7 @@ const CVSection: React.FC = () => {
   };
 
   return (
-    <AnimatedSection id="cv" className="section-container py-20" animation="slide-up">
+    <AnimatedSection id="cv" className="section-container py-24" animation="slide-up">
       <motion.div 
         className="text-center mb-16"
         initial={{ opacity: 0, y: -20 }}
@@ -152,21 +152,29 @@ const CVSection: React.FC = () => {
                   {activeTab === 'experience' && (
                     <motion.div variants={containerVariants} initial="hidden" animate="visible">
                       <motion.div variants={itemVariants} className="mb-4">
-                        <h4 className="font-semibold text-gray-800 mb-2">Développeuse Full Stack Junior</h4>
-                        <p className="text-gray-600 text-sm text-justify">2023 - Présent</p>
+                        <h4 className="font-semibold text-gray-800 mb-2">Stagiaire Ingénieur Mobile & IA — Développement d'agents intelligents</h4>
+                        <p className="text-gray-600 text-sm text-justify">AfriTechia, Casablanca — Juillet 2025 – Août 2025</p>
                         <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1 text-justify">
-                          <li>Développement d'applications web modernes</li>
-                          <li>Utilisation de React, Node.js et MongoDB</li>
-                          <li>Collaboration en équipe avec méthodologie Agile</li>
+                          <li>Conception et développement d'un Agent d'Intelligence Artificielle (OCR, STT, TTS) pour la traduction Darija</li>
+                          <li>Résultat : Amélioration de 80% de la communication multilingue</li>
+                          <li>Technologies : Intelligence Artificielle, Traitement du langage naturel, Mobile Development</li>
+                        </ul>
+                      </motion.div>
+                      <motion.div variants={itemVariants} className="mb-4">
+                        <h4 className="font-semibold text-gray-800 mb-2">Assistante en Conception Fonctionnelle et Communication Digitale</h4>
+                        <p className="text-gray-600 text-sm text-justify">Oriigami — Mars 2025 – Avril 2025</p>
+                        <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1 text-justify">
+                          <li>Gestion de Projet : Rédaction des Cahiers des Charges Fonctionnels (Web et Mobile)</li>
+                          <li>Étude de marché et analyse des besoins utilisateurs</li>
+                          <li>Développement de stratégies de communication et création de contenu digital</li>
                         </ul>
                       </motion.div>
                       <motion.div variants={itemVariants}>
-                        <h4 className="font-semibold text-gray-800 mb-2">Stage en développement web</h4>
-                        <p className="text-gray-600 text-sm text-justify">2022 - 2023</p>
+                        <h4 className="font-semibold text-gray-800 mb-2">Stage en Réseau et Développement</h4>
+                        <p className="text-gray-600 text-sm text-justify">SOMAGEC GROUP — 2024</p>
                         <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1 text-justify">
-                          <li>Création d'interfaces utilisateur responsives</li>
-                          <li>Intégration d'APIs RESTful</li>
-                          <li>Optimisation des performances</li>
+                          <li>Développement d'application et administration réseau</li>
+                          <li>Gestion de l'infrastructure technique</li>
                         </ul>
                       </motion.div>
                     </motion.div>
@@ -303,6 +311,25 @@ const CVSection: React.FC = () => {
               Consultez mon CV complet pour en savoir plus sur mon parcours, mes compétences et mes réalisations.
             </p>
             <DownloadCVButton />
+          </motion.div>
+
+          <motion.div 
+            className="bg-white shadow-lg rounded-lg p-6 border border-gray-100"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <h3 className="text-xl font-semibold mb-4 text-primary">Lettre de Motivation</h3>
+            <p className="text-gray-600 mb-6 text-justify">
+              Découvrez ma lettre de motivation qui présente ma vision professionnelle et mes objectifs de carrière.
+            </p>
+            <a 
+              href="/bjane asmaa cover letter.pdf" 
+              download
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              <Download size={20} />
+              <span>Télécharger ma Lettre de Motivation</span>
+            </a>
           </motion.div>
 
           <motion.div 

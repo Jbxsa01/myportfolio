@@ -553,7 +553,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
         <Certifications />
       <div ref={cvRef} id="cv" className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10 transform hover:scale-[1.02] transition-all duration-300 border border-gray-100 relative group">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-12 transform hover:scale-[1.02] transition-all duration-300 border border-gray-100 relative group">
             {/* 3D Floating Elements */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500 transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 transform group-hover:-translate-x-5 group-hover:-translate-y-5"></div>
@@ -571,7 +571,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
             </p>
                   <div className="flex justify-center">
             <a 
-                      href="CV-bjane-Asmaa.pdf" 
+                      href="CV bjane Asmaa software engineer.pdf" 
               download
                       className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     >
