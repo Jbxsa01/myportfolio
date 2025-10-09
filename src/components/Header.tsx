@@ -124,7 +124,7 @@ const Header: React.FC = () => {
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-gray-100">
               <img 
-                src="/src/unnamed.png" 
+                src="/unnamed.png" 
                 alt="Portrait" 
                 className="w-full h-full object-cover object-center"
                 onError={(e) => {

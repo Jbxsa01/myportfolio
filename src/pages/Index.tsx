@@ -571,7 +571,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
             </p>
                   <div className="flex justify-center">
             <a 
-                      href="CV bjane Asmaa software engineer.pdf" 
+                      href="/CV bjane Asmaa software engineer.pdf" 
               download
                       className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     >

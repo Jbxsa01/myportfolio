@@ -161,7 +161,7 @@ const Experience: React.FC = () => {
           let logoSrc = '';
           if (item.institution === 'AfriTechia, Casablanca') {
             tag = 'IA & Mobile';
-            logoSrc = '/src/components/logo-afritechia.png';
+            logoSrc = '/logo-afritechia.png';
             details = [
               "Conception d'un système intelligent intégrant OCR, STT et TTS pour la traduction Darija",
               "Amélioration de 80% de la communication multilingue",
@@ -169,7 +169,7 @@ const Experience: React.FC = () => {
             ];
           } else if (item.institution === 'Oriigami') {
             tag = 'Gestion de Projet';
-            logoSrc = '/src/oriigami.png';
+            logoSrc = '/oriigami.png';
             details = [
               'Rédaction des Cahiers des Charges Fonctionnels (Web et Mobile)',
               "Étude de marché et analyse des besoins utilisateurs",
@@ -177,7 +177,7 @@ const Experience: React.FC = () => {
             ];
           } else if (item.institution === 'SOMAGEC GROUP') {
             tag = 'Réseau & Développement';
-            logoSrc = '/src/images.jpg';
+            logoSrc = '/images.jpg';
             details = [
               "Développement d'une application de gestion des équipements et ressources",
               'Configuration et gestion de serveurs virtuels (VMware, Hyper-V, Proxmox)',
