@@ -18,23 +18,9 @@ const projects = [
   {
     title: "Gestion de voyage d'affaires (SkyTravel)",
     description: "Plateforme de gestion des voyages d'affaires permettant la réservation et le suivi des déplacements professionnels.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+    image: "/skytravel.jpg",
     technologies: ["PHP", "Python"],
     delay: 200
-  },
-  {
-    title: "Gestion des hôpitaux",
-    description: "Système de gestion hospitalière pour optimiser les ressources, les rendez-vous et le suivi des patients.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
-    technologies: ["C"],
-    delay: 300
-  },
-  {
-    title: "Application médicale",
-    description: "Plateforme médicale pour la gestion des patients, des rendez-vous et des dossiers médicaux.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-    technologies: ["PHP", "Laravel", "Tailwind CSS", "JS", "HTML"],
-    delay: 500
   }
 ];
 

@@ -2,36 +2,37 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { Sparkles, X, Calendar, Pill, Laptop2 } from 'lucide-react';
+import { Sparkles, Server, Settings2, MonitorCheck, X } from 'lucide-react';
 
-const MedicareProject: React.FC = () => {
-  const galleryImages = Array.from({ length: 13 }, (_, i) => `/a${i + 1}.jpg`);
+const galleryImages = Array.from({ length: 9 }, (_, i) => `/g${i + 1}.jpg`);
+
+const SomagecInternshipProject: React.FC = () => {
   const [previewIndex, setPreviewIndex] = useState(0);
   const [fullscreenIndex, setFullscreenIndex] = useState<number | null>(null);
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="card-glass overflow-hidden appear appear-delay-700 h-full cursor-pointer hover:shadow-lg transition-shadow group">
+        <Card className="card-glass overflow-hidden appear appear-delay-800 h-full cursor-pointer hover:shadow-lg transition-shadow group">
           <div className="h-48 overflow-hidden relative bg-slate-200 dark:bg-slate-700">
             <img
               src={galleryImages[previewIndex]}
-              alt="Medicare preview"
+              alt="Somagec preview"
               className="w-full h-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">Medicare</h3>
+            <h3 className="text-xl font-semibold mb-2">Soutenance de Stage Somagec</h3>
             <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-              Plateforme médicale pour la gestion des patients, des rendez-vous et des dossiers médicaux. Simplifier l’accès aux soins pour tous.
+              🌟 Un chapitre important de mon parcours : optimisation IT, développement d'une application de gestion de parc, et gestion quotidienne des équipements.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <Badge variant="secondary" className="text-xs">Santé Digitale</Badge>
-              <Badge variant="secondary" className="text-xs">Consultations en ligne</Badge>
-              <Badge variant="secondary" className="text-xs">Prise de rendez-vous</Badge>
-              <Badge variant="secondary" className="text-xs">Commande médicaments</Badge>
+              <Badge variant="secondary" className="text-xs">Virtualisation</Badge>
+              <Badge variant="secondary" className="text-xs">Configuration Système</Badge>
+              <Badge variant="secondary" className="text-xs">Gestion Parc IT</Badge>
+              <Badge variant="secondary" className="text-xs">Développement Application</Badge>
             </div>
             <div className="text-xs text-primary font-semibold flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
@@ -42,69 +43,65 @@ const MedicareProject: React.FC = () => {
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Medicare</DialogTitle>
+          <DialogTitle className="text-2xl">Soutenance de Stage chez SOMAGEC GROUP</DialogTitle>
           <DialogDescription>
-            Plateforme médicale innovante pour l'accès aux soins
+            Un chapitre important de mon parcours professionnel
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-8">
           {/* Intro */}
           <div className="space-y-4">
             <p className="text-foreground leading-relaxed">
-              💡 Repenser la santé digitale avec Medicare 💡<br />
-              Dans un monde où la technologie transforme nos modes de vie, j’ai choisi de mettre mes compétences au service de la santé en développant Medicare : une plateforme innovante qui simplifie l’accès aux soins pour tous.
+              Aujourd'hui est un jour particulièrement significatif pour moi : je présente officiellement le résultat de mon stage chez Somagec. Cette expérience a été une aventure enrichissante qui m'a permis de développer des compétences essentielles et de contribuer à des projets ambitieux.
             </p>
           </div>
-          {/* Fonctionnalités clés */}
+          {/* Missions */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200">
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-emerald-600" />
-                  Prise de rendez-vous rapide
+                  <Server className="w-4 h-4 text-blue-600" />
+                  Optimisation IT
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80">
-                Interface intuitive adaptée à tous les profils pour réserver avec des médecins.
+                Optimiser la virtualisation et la configuration des systèmes pour améliorer la performance et la fiabilité des infrastructures IT.
               </CardContent>
             </Card>
             <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Pill className="w-4 h-4 text-green-600" />
-                  Commande de médicaments
+                  <Settings2 className="w-4 h-4 text-green-600" />
+                  Application de gestion de parc
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80">
-                Optimisation par géolocalisation pour trouver les pharmacies les plus proches.
+                Conception et développement d'une application complète pour la gestion des équipements, suivi des pannes, maintenances, achats et allocations.
               </CardContent>
             </Card>
-            <Card className="bg-gradient-to-br from-teal-50 to-teal-100 border-teal-200 md:col-span-2">
+            <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 md:col-span-2">
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Laptop2 className="w-4 h-4 text-teal-600" />
-                  Consultations en ligne
+                  <MonitorCheck className="w-4 h-4 text-amber-600" />
+                  Gestion quotidienne des équipements
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80">
-                Pour les cas simples, obtenir des prescriptions médicales sans déplacement inutile.
+                Suivi du bon fonctionnement, mise en place de procédures de résolution rapide des incidents pour maintenir la performance opérationnelle.
               </CardContent>
             </Card>
           </div>
           {/* Valeur ajoutée */}
           <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
             <CardHeader>
-              <CardTitle className="text-lg">La valeur ajoutée</CardTitle>
+              <CardTitle className="text-lg">Valeur ajoutée</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm leading-relaxed text-foreground/90">
               <p>
-                Medicare n'est pas seulement une plateforme médicale. C'est un <strong>levier pour démocratiser l'accès aux soins</strong>.
+                Cette expérience a marqué une étape décisive dans mon parcours professionnel, me permettant d'acquérir des compétences clés et de contribuer à des projets innovants.
               </p>
               <p>
-                Un système où la santé est connectée, accessible et toujours plus humaine.
-              </p>
-              <p>
-                Une démonstration que la technologie peut être au service de la santé et de l'inclusion.
+                Je suis fière de ce que nous avons accompli et enthousiaste pour les perspectives futures.
               </p>
             </CardContent>
           </Card>
@@ -125,7 +122,7 @@ const MedicareProject: React.FC = () => {
                     >
                       <img
                         src={img}
-                        alt={`Medicare screenshot ${idx}`}
+                        alt={`Somagec screenshot ${idx}`}
                         className="w-full h-full object-contain"
                         loading="lazy"
                       />
@@ -158,7 +155,7 @@ const MedicareProject: React.FC = () => {
           <div className="space-y-3">
             <h4 className="font-semibold text-sm">Stack technologique</h4>
             <div className="flex flex-wrap gap-2">
-              {['PHP', 'Laravel', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Tailwind CSS'].map((tech) => (
+              {['Virtualisation', 'Configuration Système', 'Développement Application', 'Gestion Parc IT', 'PHP', 'AJAX', 'Tailwind CSS', 'HTML', 'JS'].map((tech) => (
                 <Badge key={tech} variant="outline">{tech}</Badge>
               ))}
             </div>
@@ -167,7 +164,7 @@ const MedicareProject: React.FC = () => {
           <div className="text-xs text-muted-foreground space-y-2">
             <p className="font-semibold text-foreground/70">Hashtags du projet</p>
             <p className="line-clamp-3">
-              #SantéDigitale #FemmesDansLaTech #InnovationSanté #WebDevelopment #PHP #TailwindCSS
+              #SoutenanceDeStage #Somagec #Virtualisation #ConfigurationSystème #DéveloppementApplication #GestionParcIT #Innovation #DéveloppementProfessionnel #EMSI #Ingénierie
             </p>
           </div>
         </div>
@@ -176,4 +173,4 @@ const MedicareProject: React.FC = () => {
   );
 };
 
-export default MedicareProject;
+export default SomagecInternshipProject;
