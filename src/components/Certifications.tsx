@@ -41,6 +41,18 @@ interface Certification {
 
 const eventParticipations: Certification[] = [
   {
+    id: 'devminds-head-tech-community',
+    title: 'Head of Tech & Community',
+    issuer: 'DevMinds Morocco',
+    date: '2025',
+    image: '/certifications/images/devminds.jpg',
+    category: 'completed',
+    progress: 100,
+    description: 'Leadership technique et communautaire au sein de DevMinds Morocco : organisation de workshops, coordination des events et accompagnement des membres.',
+    skills: ['Leadership', 'Community Building', 'Workshops', 'Event Management', 'Mentorat', 'Tech Strategy'],
+    level: 'advanced'
+  },
+  {
     id: 'um6ss-ehealth-forum',
     title: 'eHealth Forum 2025',
     issuer: 'UM6SS',

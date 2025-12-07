@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import Community from '@/components/Community';
 import Certifications from '@/components/Certifications';
 import FunQuiz from '@/components/FunQuiz';
 import Contact from '@/components/Contact';
@@ -15,7 +16,7 @@ import SettingsPanel from '@/components/SettingsPanel';
 import SettingsButton from '@/components/SettingsButton';
 import CustomCursor from '@/components/CustomCursor';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
-import { Download, Home, User, Briefcase, Code, Wrench, FileText, Mail, Presentation, ChevronUp, Globe, Mic, Volume2, VolumeX, Eye, EyeOff, Keyboard, MousePointer, Layout, Zap, Shield, Lock, Star, Award, Trophy, Crown } from 'lucide-react';
+import { Download, Home, User, Users, Briefcase, Code, Wrench, FileText, Mail, Presentation, ChevronUp, Globe, Mic, Volume2, VolumeX, Eye, EyeOff, Keyboard, MousePointer, Layout, Zap, Shield, Lock, Star, Award, Trophy, Crown } from 'lucide-react';
 import ReadingProgress from '../components/ReadingProgress';
 import QuickNav from '../components/QuickNav';
 
@@ -68,6 +69,7 @@ const sections = [
   { id: 'experience', label: 'Expérience', icon: <Briefcase size={16} /> },
   { id: 'projects', label: 'Projets', icon: <Code size={16} /> },
   { id: 'skills', label: 'Compétences', icon: <Wrench size={16} /> },
+  { id: 'community', label: 'Communauté', icon: <Users size={16} /> },
   { id: 'languages-technologies', label: 'Langages & Tech', icon: <Zap size={16} /> },
   { id: 'certifications', label: 'Certifications', icon: <Award size={16} /> },
   { id: 'cv', label: 'CV', icon: <FileText size={16} /> },
@@ -577,6 +579,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
         <Experience />
         <Projects />
         <Skills />
+        <Community />
         <Certifications />
       <div ref={cvRef} id="cv" className="relative py-32 overflow-hidden">
         {/* Background avec effet premium */}

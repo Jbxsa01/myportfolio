@@ -1,6 +1,11 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import ProjectCard from './ProjectCard';
+import DarijaAIProject from './DarijaAIProject';
+import CharityPlatformProject from './CharityPlatformProject';
+import FournissMaProject from './FournissMaProject';
+import DotNetMVCProject from './DotNetMVCProject';
+import MedicareProject from './MedicareProject';
 
 const projects = [
   {
@@ -25,13 +30,6 @@ const projects = [
     delay: 300
   },
   {
-    title: "Application esthétique",
-    description: "Application de gestion pour salon d'esthétique avec réservation de rendez-vous et suivi des clients.",
-    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80",
-    technologies: [".NET", "ASP.NET", "SQL Server"],
-    delay: 400
-  },
-  {
     title: "Application médicale",
     description: "Plateforme médicale pour la gestion des patients, des rendez-vous et des dossiers médicaux.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
@@ -51,6 +49,11 @@ const Projects: React.FC = () => {
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <DarijaAIProject />
+        <CharityPlatformProject />
+        <FournissMaProject />
+        <DotNetMVCProject />
+        <MedicareProject />
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
