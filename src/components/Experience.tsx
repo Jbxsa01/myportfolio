@@ -22,14 +22,14 @@ const experienceData = [
   },
   {
     id: 2,
-    year: "2021–2023",
+    year: "2021-2023",
     title: "Classes préparatoires intégrées",
     institution: "EMSI Casablanca",
     type: "education"
   },
   {
     id: 3,
-    year: "2023–2026",
+    year: "2023-2026",
     title: "Cycle Ingénieur: Software Architecture & Data Engineering (MIAGE)",
     institution: "EMSI Casablanca",
     type: "education"
@@ -81,71 +81,64 @@ const Experience: React.FC = () => {
         </p>
       </div>
       
-      {/* Timeline Simple et Professionnelle */}
-      <div className="relative max-w-7xl mx-auto">
-        {/* Ligne horizontale simple */}
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-300 transform -translate-y-1/2"></div>
+      {/* Timeline Horizontale Style Premium */}
+      <div className="relative max-w-7xl mx-auto py-20">
+        {/* Ligne horizontale principale avec gradient */}
+        <div className="absolute top-[120px] left-0 right-0 h-1 bg-gradient-to-r from-orange-400 via-purple-500 via-blue-500 via-green-500 to-red-500 shadow-lg"></div>
         
-        {/* Container avec grille simple */}
-        <div className="grid grid-cols-6 gap-0 relative py-12">
+        {/* Container avec disposition alternée */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 relative">
           {experienceData.map((item, index) => {
-            // Logique de progression : Education -> Professional
             const isEducation = item.type === "education";
-            const isFirstProfessional = item.type === "professional" && index === 3;
-            const isLastItem = index === experienceData.length - 1;
+            const colors = [
+              { border: 'border-orange-400', bg: 'bg-orange-400', text: 'text-orange-600', bgLight: 'bg-orange-50', shadow: 'shadow-orange-200' },
+              { border: 'border-purple-500', bg: 'bg-purple-500', text: 'text-purple-600', bgLight: 'bg-purple-50', shadow: 'shadow-purple-200' },
+              { border: 'border-blue-500', bg: 'bg-blue-500', text: 'text-blue-600', bgLight: 'bg-blue-50', shadow: 'shadow-blue-200' },
+              { border: 'border-green-500', bg: 'bg-green-500', text: 'text-green-600', bgLight: 'bg-green-50', shadow: 'shadow-green-200' },
+              { border: 'border-teal-500', bg: 'bg-teal-500', text: 'text-teal-600', bgLight: 'bg-teal-50', shadow: 'shadow-teal-200' },
+              { border: 'border-red-500', bg: 'bg-red-500', text: 'text-red-600', bgLight: 'bg-red-50', shadow: 'shadow-red-200' }
+            ];
+            const color = colors[index % colors.length];
+            const isTop = index % 2 === 0;
             
             return (
-              <div key={item.id} className="flex flex-col items-center relative group">
-                {/* Point simple et élégant */}
-                <div className={`w-4 h-4 rounded-full z-10 border-2 mb-6 transition-all duration-300 hover:scale-125 ${
-                  isEducation 
-                    ? 'bg-white dark:bg-gray-900 border-gray-400' 
-                    : isFirstProfessional 
-                    ? 'bg-white dark:bg-gray-900 border-blue-400' 
-                    : 'bg-white dark:bg-gray-900 border-blue-500'
-                }`}>
-                  <div className={`w-2 h-2 rounded-full mx-auto mt-0.5 transition-all duration-300 ${
-                    isEducation 
-                      ? 'bg-gray-400' 
-                      : isFirstProfessional 
-                      ? 'bg-blue-400' 
-                      : 'bg-blue-500'
-                  }`}></div>
-            </div>
-            
-                {/* Ligne de connexion simple */}
-                {!isLastItem && (
-                  <div className="absolute top-1/2 left-1/2 w-full h-px bg-gray-300 transform translate-x-1/2 -translate-y-1/2 z-0"></div>
-                )}
-                
-                {/* Contenu simple */}
-                <div className="text-center w-full px-2 relative z-10">
-                  {/* Badge de date simple */}
-                  <div className={`inline-block text-xs font-mono px-3 py-1.5 rounded-full border mb-3 tracking-wide font-medium transition-all duration-300 hover:scale-105 ${
-                    isEducation 
-                      ? 'text-gray-600 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700' 
-                      : isFirstProfessional 
-                      ? 'text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' 
-                      : 'text-blue-700 bg-blue-100 dark:bg-blue-900/30 border-blue-300 dark:border-blue-600'
-                  }`}>
-                    {item.year}
+              <div key={item.id} className="relative flex flex-col items-center group">
+                {/* Contenu alterné (haut/bas) */}
+                <div className={`flex flex-col items-center w-full ${isTop ? 'mb-8' : 'mt-8 flex-col-reverse'}`}>
+                  {/* Card avec contenu */}
+                  <div className={`bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 ${color.border} hover:-translate-y-2 w-full ${color.shadow}`}>
+                    {/* Badge d'année circulaire */}
+                    <div className={`w-20 h-20 mx-auto mb-4 rounded-full border-4 ${color.border} ${color.bgLight} flex items-center justify-center font-bold ${color.text} text-lg shadow-lg`}>
+                      {item.year.length <= 4 ? item.year : item.year.split('-')[0].trim()}
+                    </div>
+                    
+                    {/* Titre avec label */}
+                    <div className={`inline-block px-3 py-1 rounded-full ${color.bgLight} ${color.text} text-xs font-bold mb-3 uppercase tracking-wide`}>
+                      {isEducation ? 'Formation' : 'Expérience'}
+                    </div>
+                    
+                    <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      {item.institution}
+                    </p>
+                    
+                    {/* Période complète en bas */}
+                    <div className={`mt-4 pt-3 border-t ${color.border} border-opacity-20`}>
+                      <div className="flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span className="font-medium">{item.year}</span>
+                      </div>
+                    </div>
                   </div>
                   
-                  {/* Titre simple */}
-                  <h3 className={`text-sm font-medium mb-2 leading-tight tracking-tight transition-all duration-300 hover:scale-105 ${
-                    isEducation 
-                      ? 'text-gray-700 dark:text-gray-300' 
-                      : isFirstProfessional 
-                      ? 'text-gray-800 dark:text-gray-200' 
-                      : 'text-gray-900 dark:text-gray-100'
-                  }`}>
-                    {item.title}
-                  </h3>
-                  
-                  {/* Institution simple */}
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
-                    {item.institution}
-                  </p>
+                  {/* Connecteur vertical avec cercle */}
+                  <div className="relative flex flex-col items-center my-2">
+                    <div className={`w-1 h-12 ${color.bg}`}></div>
+                    <div className={`w-6 h-6 rounded-full ${color.bg} border-4 border-white dark:border-gray-900 shadow-lg z-20 group-hover:scale-125 transition-transform duration-300`}></div>
+                  </div>
                 </div>
               </div>
             );

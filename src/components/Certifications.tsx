@@ -39,6 +39,21 @@ interface Certification {
   credentialId?: string;
 }
 
+const eventParticipations: Certification[] = [
+  {
+    id: 'um6ss-ehealth-forum',
+    title: 'eHealth Forum 2025',
+    issuer: 'UM6SS',
+    date: '2025',
+    image: '/certifications/ehealth .png',
+    category: 'completed',
+    progress: 100,
+    description: 'Participation au forum eHealth 2025 organisé par l\'Université Mohammed VI des Sciences de la Santé (UM6SS), événement majeur sur les technologies de la santé numérique et l\'innovation médicale.',
+    skills: ['eHealth', 'Digital Health', 'Healthcare Innovation', 'Medical Technology', 'Health Information Systems'],
+    level: 'intermediate'
+  }
+];
+
 const certifications: Certification[] = [
   {
     id: 'ibm-containers-kubernetes',
@@ -265,27 +280,82 @@ const certifications: Certification[] = [
     credentialId: 'YQD5QP6KNYTY'
   },
   {
-    id: 'oracle-java-se17-inprogress',
-    title: 'Become a Java SE 17 Developer',
+    id: 'oracle-ai-vector-search',
+    title: 'Oracle AI Vector Search Certified Professional',
     issuer: 'Oracle',
-    date: '',
-    image: '',
-    category: 'in-progress',
-    progress: 0,
-    description: 'Certification en cours sur le développement Java SE 17, couvrant les nouveautés du langage, la programmation orientée objet, les API modernes et les bonnes pratiques Oracle.',
-    skills: ['Java SE 17', 'OOP', 'API', 'Java Programming', 'Oracle Certification'],
-    level: 'advanced'
+    date: 'Nov 2025',
+    image: '/certifications/images/AI VECTOR CERTIF ORACLE.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=7FED0E6CC4A8683904F1F3449B4DC4FC3E7AFF42D0CE154993E07ACED773007A',
+    category: 'completed',
+    description: 'Certification professionnelle Oracle validant l\'expertise en recherche vectorielle IA, technologies de base de données vectorielles et solutions IA avancées.',
+    skills: ['AI Vector Search', 'Oracle Database', 'Machine Learning', 'Vector Databases', 'AI Solutions'],
+    level: 'advanced',
+    credentialId: '7FED0E6CC4A8683904F1F3449B4DC4FC3E7AFF42D0CE154993E07ACED773007A'
   },
   {
-    id: 'oracle-java-se17-planned',
-    title: 'Become a Java SE 17 Developer',
+    id: 'oracle-oci-ai-foundations',
+    title: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
     issuer: 'Oracle',
-    date: '',
-    image: '',
-    category: 'planned',
-    description: 'Certification planifiée sur Java SE 17, très intéressante pour approfondir les compétences avancées en Java et obtenir une reconnaissance officielle Oracle.',
-    skills: ['Java SE 17', 'OOP', 'API', 'Java Programming', 'Oracle Certification'],
-    level: 'advanced'
+    date: 'Nov 2025',
+    image: '/certifications/Associate Ai.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=30919A7F6F704604561EFB47DA6EEFB6870BA89B11A5F16A5C45CE98FCF7E343',
+    category: 'completed',
+    description: 'Certification Oracle Cloud Infrastructure validant les fondamentaux de l\'intelligence artificielle, les services AI sur OCI et l\'implémentation de solutions IA dans le cloud.',
+    skills: ['Oracle Cloud', 'AI Foundations', 'Cloud AI Services', 'OCI', 'Machine Learning'],
+    level: 'intermediate',
+    credentialId: '30919A7F6F704604561EFB47DA6EEFB6870BA89B11A5F16A5C45CE98FCF7E343'
+  },
+  {
+    id: 'oracle-oci-generative-ai',
+    title: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional',
+    issuer: 'Oracle',
+    date: 'Oct 2025',
+    image: '/certifications/gen ai.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=A8E05DEE90AF8A6482B87ABFB7EA7FA005F14E97239C63AB31EDCC4A9029A366',
+    category: 'completed',
+    description: 'Certification professionnelle Oracle Cloud Infrastructure validant l\'expertise en IA générative, modèles de langage, prompt engineering et implémentation de solutions GenAI sur OCI.',
+    skills: ['Generative AI', 'Oracle Cloud', 'Large Language Models', 'Prompt Engineering', 'OCI', 'GenAI Solutions'],
+    level: 'advanced',
+    credentialId: 'A8E05DEE90AF8A6482B87ABFB7EA7FA005F14E97239C63AB31EDCC4A9029A366'
+  },
+  {
+    id: 'oracle-apex-cloud-developer',
+    title: 'Oracle APEX Cloud Developer Certified Professional',
+    issuer: 'Oracle',
+    date: 'Nov 2025',
+    image: '/certifications/apex.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=6F6DB37AF0330A82F922CDD86085DDC49AFF1136A8B6C93DCA643FC76FF2A6F6',
+    category: 'completed',
+    description: 'Certification professionnelle Oracle validant l\'expertise en développement d\'applications cloud avec Oracle APEX, incluant la création d\'applications web modernes et la gestion de bases de données.',
+    skills: ['Oracle APEX', 'Cloud Development', 'Web Applications', 'Oracle Database', 'Low-Code Development'],
+    level: 'advanced',
+    credentialId: '6F6DB37AF0330A82F922CDD86085DDC49AFF1136A8B6C93DCA643FC76FF2A6F6'
+  },
+  {
+    id: 'oracle-oci-data-science',
+    title: 'Oracle Cloud Infrastructure 2025 Certified Data Science Professional',
+    issuer: 'Oracle',
+    date: 'Nov 2025',
+    image: '/certifications/data.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=77C56AB5A7F8CB59EF98E9D33CB5753569E0A363E63617EE8F93A8796328E3E1',
+    category: 'completed',
+    description: 'Certification professionnelle Oracle Cloud Infrastructure validant l\'expertise en Data Science, machine learning, analyse de données et implémentation de modèles ML sur OCI.',
+    skills: ['Data Science', 'Machine Learning', 'Oracle Cloud', 'OCI', 'Data Analysis', 'ML Models'],
+    level: 'advanced',
+    credentialId: '77C56AB5A7F8CB59EF98E9D33CB5753569E0A363E63617EE8F93A8796328E3E1'
+  },
+  {
+    id: 'oracle-oci-devops-professional',
+    title: 'Oracle Cloud Infrastructure 2025 Certified DevOps Professional',
+    issuer: 'Oracle',
+    date: 'Nov 2025',
+    image: '/certifications/devops.png',
+    link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=77C56AB5A7F8CB59EF98E9D33CB57535BDD4AF2831AADB31EF2271C2AB56994E',
+    category: 'completed',
+    description: 'Certification professionnelle Oracle Cloud Infrastructure validant l\'expertise en DevOps, CI/CD, automatisation et gestion d\'infrastructure cloud sur OCI.',
+    skills: ['Oracle Cloud', 'DevOps', 'CI/CD', 'Infrastructure as Code', 'OCI', 'Automation'],
+    level: 'advanced',
+    credentialId: '77C56AB5A7F8CB59EF98E9D33CB57535BDD4AF2831AADB31EF2271C2AB56994E'
   }
 ];
 
@@ -331,22 +401,29 @@ const Certifications: React.FC = () => {
     certifications.length * 100
   );
 
+  const allEvents = eventParticipations;
+  const completedEvents = allEvents.filter(c => c.category === 'completed');
+
   const renderCertificationCard = (cert: Certification) => (
     <Card 
       key={cert.id} 
-      className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden"
+      className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden bg-white dark:bg-slate-900"
       onClick={() => setSelectedCert(cert)}
     >
-      {/* Image de certification en pleine largeur */}
-      <div className="relative w-full h-64 overflow-hidden">
+      {/* Image de certification en pleine largeur avec lazy loading */}
+      <div className="relative w-full h-64 overflow-hidden bg-slate-100 dark:bg-slate-800">
         <img 
           src={cert.image} 
           alt={`${cert.title} certification`}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           onError={(e) => {
-            e.currentTarget.src = '/placeholder.svg';
-            e.currentTarget.className = 'w-full h-full bg-gray-100 flex items-center justify-center';
-            e.currentTarget.innerHTML = '<div class="text-gray-400 text-center text-lg">Image non disponible</div>';
+            const target = e.currentTarget;
+            target.style.display = 'none';
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-slate-100 dark:bg-slate-800"><div class="text-slate-400 text-center text-sm">Image non disponible</div></div>';
+            }
           }}
         />
         {cert.category === 'completed' && (
@@ -430,13 +507,29 @@ const Certifications: React.FC = () => {
   );
 
   return (
-    <AnimatedSection id="certifications" className="section-container py-24">
-      <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block">
+    <AnimatedSection id="certifications" className="section-container py-24 bg-white dark:bg-slate-950">
+      <h2 className="section-title before:content-[''] before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-1 before:bg-secondary before:rounded-full relative inline-block text-slate-900 dark:text-white">
         Certifications & Formations
       </h2>
-      <p className="section-subtitle">
+      <p className="section-subtitle text-slate-600 dark:text-slate-400">
         Mon parcours de formation et mes certifications professionnelles
       </p>
+
+      {/* Section Événements et Participations */}
+      {allEvents.length > 0 && (
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+            <Star className="w-6 h-6 text-yellow-500" />
+            Événements & Participations
+          </h3>
+          <p className="text-slate-600 dark:text-slate-400 mb-6">
+            Participation à des événements professionnels et forums d'innovation
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allEvents.map(renderCertificationCard)}
+          </div>
+        </div>
+      )}
 
       {/* Statistiques globales */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">

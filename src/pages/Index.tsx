@@ -67,6 +67,7 @@ const sections = [
   { id: 'experience', label: 'Expérience', icon: <Briefcase size={16} /> },
   { id: 'projects', label: 'Projets', icon: <Code size={16} /> },
   { id: 'skills', label: 'Compétences', icon: <Wrench size={16} /> },
+  { id: 'languages-technologies', label: 'Langages & Tech', icon: <Zap size={16} /> },
   { id: 'certifications', label: 'Certifications', icon: <Award size={16} /> },
   { id: 'cv', label: 'CV', icon: <FileText size={16} /> },
   { id: 'contact', label: 'Contact', icon: <Mail size={16} /> },
@@ -551,54 +552,181 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
         <Projects />
         <Skills />
         <Certifications />
-      <div ref={cvRef} id="cv" className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-12 transform hover:scale-[1.02] transition-all duration-300 border border-gray-100 relative group">
-            {/* 3D Floating Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500 transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 transform group-hover:-translate-x-5 group-hover:-translate-y-5"></div>
-            
-            <div className="relative z-10">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent text-center">
-                Mon CV
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                  <p className="text-lg text-gray-600 leading-relaxed text-justify">
-              Vous pouvez télécharger mon CV pour en savoir plus sur mon parcours professionnel, 
-              mes compétences et mes expériences. N'hésitez pas à me contacter pour toute opportunité 
-                    de collaboration.
-            </p>
-                  <div className="flex justify-center">
-            <a 
-                      href="/CV bjane Asmaa software engineer.pdf" 
-              download
-                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                    >
-                      <Download className="w-5 h-5" />
-                      <span>Télécharger mon CV</span>
-                    </a>
+      <div ref={cvRef} id="cv" className="relative py-32 overflow-hidden">
+        {/* Background avec effet premium */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section - Design Éditorial */}
+          <div className="text-center mb-28">
+            <div className="inline-flex items-center gap-4 mb-8">
+              <div className="w-12 h-px bg-white/20"></div>
+              <span className="text-xs font-mono text-white/60 uppercase tracking-[0.4em]">Professional Profile</span>
+              <div className="w-12 h-px bg-white/20"></div>
+            </div>
+            <h2 className="text-8xl font-display font-extralight text-white mb-10 tracking-tight leading-none">
+              Profil
+            </h2>
+            <p className="text-3xl font-light text-white/80 tracking-wide">Professionnel</p>
+          </div>
+
+          {/* Layout Asymétrique Premium */}
+          <div className="grid lg:grid-cols-5 gap-20 items-start">
+            {/* Left Column - Principal (3 cols) */}
+            <div className="lg:col-span-3 space-y-16">
+              {/* Titre Principal avec Design Moderne */}
+              <div className="space-y-8">
+                <div className="relative">
+                  <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                  <div className="pl-8">
+                    <p className="text-xs font-mono text-white/50 uppercase tracking-[0.35em] mb-6">Expertise Principale</p>
+                    <h3 className="text-5xl font-extralight text-white leading-tight tracking-tight mb-4">
+                      Ingénieure Logiciel
+                    </h3>
+                    <p className="text-3xl font-light text-white/90 leading-tight mb-6">
+                      Full Stack Development
+                    </p>
+                    <div className="flex items-center gap-5 text-sm text-white/60 font-light">
+                      <span>Intelligence Artificielle</span>
+                      <span className="w-1 h-1 bg-white/40 rounded-full"></span>
+                      <span>Architecture Logicielle</span>
+                    </div>
                   </div>
                 </div>
-                <div className="hidden md:block">
+              </div>
+
+              {/* Value Proposition - Design Magazine */}
+              <div className="relative">
+                <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                <div className="pl-8 space-y-6">
+                  <p className="text-xs font-mono text-white/50 uppercase tracking-[0.35em]">Proposition de Valeur</p>
+                  <p className="text-xl text-white/90 leading-relaxed font-light">
+                    <span className="text-white font-normal">Expertise technique avancée</span> en développement full-stack, 
+                    alliant innovation rapide et solutions production-ready. Capacité d'adaptation aux défis techniques 
+                    complexes avec création de valeur immédiate.
+                  </p>
+                  <div className="inline-block px-6 py-3 border border-white/20 backdrop-blur-sm">
+                    <p className="text-sm text-white font-light tracking-wide">
+                      Disponible dès maintenant pour un PFE
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Compétences en Colonnes */}
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="space-y-8">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-2xl transform rotate-3"></div>
-                    <div className="relative bg-white p-6 rounded-2xl shadow-lg transform -rotate-3">
-                      <div className="space-y-4">
-                        <div className="cv-element" data-type="experience">
-                          <h3 className="text-xl font-semibold text-primary">Expérience</h3>
-                          <p className="text-gray-600">Stagiaire Développeur Web et Réseau chez SOMAGEC</p>
-                        </div>
-                        <div className="cv-element" data-type="skills">
-                          <h3 className="text-xl font-semibold text-primary">Compétences</h3>
-                          <p className="text-gray-600">HTML, CSS, JavaScript, PHP, React, Node.js, Java, Python</p>
-                        </div>
-                        <div className="cv-element" data-type="education">
-                          <h3 className="text-xl font-semibold text-primary">Formation</h3>
-                          <p className="text-gray-600">École Marocaine des Sciences de l'Ingénieur (EMSI)</p>
-                        </div>
-                      </div>
+                    <div className="absolute -left-4 top-0 h-px w-8 bg-white/30"></div>
+                    <div className="pl-8">
+                      <p className="text-xs font-mono text-white/50 uppercase tracking-[0.3em] mb-4">Stack Technique</p>
+                      <p className="text-sm text-white/80 leading-relaxed font-light">
+                        React • Node.js • Python<br/>
+                        TypeScript • PostgreSQL<br/>
+                        Docker • Git
+                      </p>
                     </div>
+                  </div>
+                  
+                  <div className="relative">
+                    <div className="absolute -left-4 top-0 h-px w-8 bg-white/30"></div>
+                    <div className="pl-8">
+                      <p className="text-xs font-mono text-white/50 uppercase tracking-[0.3em] mb-4">Soft Skills</p>
+                      <p className="text-sm text-white/80 leading-relaxed font-light">
+                        Autonomie Professionnelle<br/>
+                        Leadership Technique<br/>
+                        Collaboration Agile
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-8">
+                  <div className="relative">
+                    <div className="absolute -left-4 top-0 h-px w-8 bg-white/30"></div>
+                    <div className="pl-8">
+                      <p className="text-xs font-mono text-white/50 uppercase tracking-[0.3em] mb-4">Spécialités</p>
+                      <p className="text-sm text-white/80 leading-relaxed font-light">
+                        Intelligence Artificielle<br/>
+                        Machine Learning<br/>
+                        Architecture Web<br/>
+                        Database Design
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA - Design Minimaliste Premium */}
+              <div className="pt-8">
+                <a 
+                  href="/bjane Asmaa.pdf" 
+                  download
+                  className="group relative inline-flex items-center gap-6 border border-white/30 hover:border-white/60 px-10 py-6 transition-all duration-500 backdrop-blur-sm"
+                >
+                  <Download className="w-5 h-5 text-white" />
+                  <span className="text-base font-light tracking-widest text-white uppercase">Télécharger CV</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-700"></div>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column - Stats & Propositions (2 cols) */}
+            <div className="lg:col-span-2 space-y-16">
+              {/* Stats Verticales Premium */}
+              <div className="space-y-10">
+                <div className="relative pb-8 border-b border-white/10">
+                  <p className="text-5xl font-extralight text-white mb-2">22+</p>
+                  <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Certifications Obtenues</p>
+                </div>
+                
+                <div className="relative pb-8 border-b border-white/10">
+                  <p className="text-5xl font-extralight text-white mb-2">5 ans</p>
+                  <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Formation Ingénieur</p>
+                </div>
+                
+                <div className="relative pb-8 border-b border-white/10">
+                  <p className="text-5xl font-extralight text-white mb-2">Full Stack</p>
+                  <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Développement</p>
+                </div>
+                
+                <div className="relative pb-8">
+                  <p className="text-5xl font-extralight text-white mb-2">IA & ML</p>
+                  <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Spécialisation</p>
+                </div>
+              </div>
+
+              {/* Propositions de Valeur */}
+              <div className="space-y-6 pt-8 border-t border-white/10">
+                <p className="text-xs font-mono text-white/50 uppercase tracking-[0.35em] mb-8">Impact</p>
+                
+                <div className="space-y-6">
+                  <div className="relative pl-6 border-l border-white/20 hover:border-white/50 transition-colors duration-300">
+                    <p className="text-sm text-white/80 leading-relaxed font-light">
+                      Solutions scalables et architecture performante
+                    </p>
+                  </div>
+                  
+                  <div className="relative pl-6 border-l border-white/20 hover:border-white/50 transition-colors duration-300">
+                    <p className="text-sm text-white/80 leading-relaxed font-light">
+                      Intégration IA & ML innovante
+                    </p>
+                  </div>
+                  
+                  <div className="relative pl-6 border-l border-white/20 hover:border-white/50 transition-colors duration-300">
+                    <p className="text-sm text-white/80 leading-relaxed font-light">
+                      Optimisation système avancée
+                    </p>
+                  </div>
+                  
+                  <div className="relative pl-6 border-l border-white/20 hover:border-white/50 transition-colors duration-300">
+                    <p className="text-sm text-white/80 leading-relaxed font-light">
+                      Mentorat technique d'équipe
+                    </p>
                   </div>
                 </div>
               </div>
@@ -654,6 +782,24 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
           onInteractiveModeChange={toggleInteractiveMode}
           premiumFeatures={premiumFeatures}
           onPremiumFeaturesChange={togglePremiumFeatures}
+          favorites={favorites}
+          onToggleFavorite={(id: string) => setFavorites(prev => prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id])}
+          notes={notes}
+          onAddNote={(id: string, note: string) => setNotes(prev => ({...prev, [id]: note}))}
+          onRemoveNote={(id: string) => setNotes(prev => {const newNotes = {...prev}; delete newNotes[id]; return newNotes;})}
+          presentationTransitions={presentationTransitions}
+          onPresentationTransitionChange={setPresentationTransitions}
+          customShortcuts={customShortcuts}
+          onUpdateShortcut={(action: string, shortcut: string) => setCustomShortcuts(prev => ({...prev, [action]: shortcut}))}
+          searchQuery={searchQuery}
+          onSearch={setSearchQuery}
+          searchResults={searchResults}
+          showSearch={showSearch}
+          onToggleSearch={() => setShowSearch(!showSearch)}
+          readingMode={readingMode}
+          onReadingModeChange={toggleReadingMode}
+          readingOptions={readingOptions}
+          onReadingOptionsChange={updateReadingOptions}
         />
       )}
       
