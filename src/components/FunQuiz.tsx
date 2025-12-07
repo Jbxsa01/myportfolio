@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
-import { Sparkles, BrainCircuit, CodeXml } from 'lucide-react';
+import { Sparkles, BrainCircuit, CodeXml, Trophy, CheckCircle, XCircle } from 'lucide-react';
 
 interface FunQuizProps {
   open: boolean;
@@ -61,6 +61,7 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
   const [current, setCurrent] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
+  const [feedback, setFeedback] = useState<Record<string, { status: 'correct' | 'wrong'; key: number }>>({});
 
   const currentQuestion = quizQuestions[current];
 
@@ -71,7 +72,9 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
   const progress = Math.round(((current + 1) / quizQuestions.length) * 100);
 
   const selectOption = (option: string) => {
+    const status = option === currentQuestion.answer ? 'correct' : 'wrong';
     setChoices(prev => ({ ...prev, [currentQuestion.id]: option }));
+    setFeedback(prev => ({ ...prev, [currentQuestion.id]: { status, key: Date.now() } }));
   };
 
   const goNext = () => {
@@ -86,6 +89,7 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
     setChoices({});
     setCurrent(0);
     setShowResult(false);
+    setFeedback({});
   };
 
   return (
@@ -117,13 +121,16 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
               <div className="space-y-2">
                 {currentQuestion.options.map(option => {
                   const isSelected = choices[currentQuestion.id] === option;
+                  const status = feedback[currentQuestion.id]?.status;
                   return (
                     <button
                       key={option}
                       onClick={() => selectOption(option)}
                       className={`w-full text-left px-4 py-3 rounded-md border transition ${
                         isSelected
-                          ? 'border-primary bg-primary/10 text-primary'
+                          ? status === 'correct'
+                            ? 'border-green-500 bg-green-50 text-green-800 animate-pulse'
+                            : 'border-red-500 bg-red-50 text-red-800 animate-pulse'
                           : 'border-border hover:border-primary/40 hover:bg-muted'
                       }`}
                     >
@@ -131,6 +138,23 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
                     </button>
                   );
                 })}
+                {feedback[currentQuestion.id] && (
+                  <div
+                    key={feedback[currentQuestion.id].key}
+                    className={`flex items-center gap-2 text-sm font-medium ${
+                      feedback[currentQuestion.id].status === 'correct'
+                        ? 'text-green-700 animate-bounce'
+                        : 'text-red-700 animate-pulse'
+                    }`}
+                  >
+                    {feedback[currentQuestion.id].status === 'correct' ? (
+                      <CheckCircle className="w-5 h-5" />
+                    ) : (
+                      <XCircle className="w-5 h-5" />
+                    )}
+                    {feedback[currentQuestion.id].status === 'correct' ? 'Bonne réponse !' : 'Raté, essaie encore.'}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -143,11 +167,16 @@ const FunQuiz: React.FC<FunQuizProps> = ({ open, onClose }) => {
           </div>
         ) : (
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <BrainCircuit className="w-6 h-6 text-primary" />
-              <div>
-                <p className="text-xl font-semibold">Score final : {score}/{quizQuestions.length}</p>
-                <p className="text-muted-foreground">Merci d'avoir joué !</p>
+            <div className="relative overflow-hidden rounded-xl border bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-yellow-400/10 p-4">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.2),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.15),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.1),transparent_45%)] animate-pulse" />
+              <div className="relative flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg animate-bounce">
+                  <Trophy className="w-7 h-7" />
+                </div>
+                <div>
+                  <p className="text-xl font-semibold text-foreground">Bravo ! Score : {score}/{quizQuestions.length}</p>
+                  <p className="text-sm text-muted-foreground">Un petit trophée pour fêter ça 🏆</p>
+                </div>
               </div>
             </div>
 
