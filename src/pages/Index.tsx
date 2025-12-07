@@ -4,6 +4,7 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Certifications from '@/components/Certifications';
+import FunQuiz from '@/components/FunQuiz';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -111,6 +112,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
   const [premiumFeatures, setPremiumFeatures] = useState(false);
   const [showPremiumBanner, setShowPremiumBanner] = useState(false);
   const [showPortfolioPreview, setShowPortfolioPreview] = useState(false);
+  const [showFunQuiz, setShowFunQuiz] = useState(false);
   const [activePortfolioLayout, setActivePortfolioLayout] = useState('classic');
   
   // Nouvelles fonctionnalités premium non liées au thème
@@ -200,6 +202,30 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
       document.documentElement.classList.remove('reading-mode');
     }
   }, [readingMode, readingOptions]);
+
+  // Déclenche le quiz fun lorsque l'utilisateur atteint le bas du scroll principal
+  useEffect(() => {
+    const SCROLL_KEY = 'fun-quiz-shown';
+    const container = document.querySelector('.custom-scroll-container');
+    if (!container) return;
+
+    if (localStorage.getItem(SCROLL_KEY)) return;
+
+    const handleScroll = () => {
+      const target = container as HTMLElement;
+      const nearBottom = target.scrollTop + target.clientHeight >= target.scrollHeight - 120;
+      if (nearBottom) {
+        setShowFunQuiz(true);
+        localStorage.setItem(SCROLL_KEY, '1');
+        target.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
   // Appliquer les transitions de présentation
   useEffect(() => {
@@ -836,6 +862,8 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
           </div>
         </div>
       )}
+
+      <FunQuiz open={showFunQuiz} onClose={() => setShowFunQuiz(false)} />
       
       {/* Aperçu du Portfolio */}
       {showPortfolioPreview && (

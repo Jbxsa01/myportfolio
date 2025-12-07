@@ -21,6 +21,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Fallback: ensure the section becomes visible even if the observer never fires
+    const fallbackTimer = setTimeout(() => setIsVisible(true), 800);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -40,6 +43,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     }
 
     return () => {
+      clearTimeout(fallbackTimer);
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
