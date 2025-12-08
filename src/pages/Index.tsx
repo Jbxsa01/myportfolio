@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import CollaborationSection from '@/components/CollaborationSection';
+import VisitorStatsSection from '@/components/VisitorStatsSection';
 import Skills from '@/components/Skills';
 import Community from '@/components/Community';
 import Certifications from '@/components/Certifications';
@@ -765,6 +766,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
         </div>
       </div>
       <CollaborationSection />
+      <VisitorStatsSection />
       <Contact />
       <Footer />
       

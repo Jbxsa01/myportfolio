@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from 'sonner';
+import { emailService } from '@/services/emailService';
 
 interface FormData {
   name: string;
@@ -52,9 +53,6 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simuler l'envoi du formulaire
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
     // Vérifier s'il y a des erreurs
     const newErrors: Partial<FormData> = {};
     Object.keys(formData).forEach(key => {
@@ -69,16 +67,24 @@ const ContactForm: React.FC = () => {
       return;
     }
 
-    // Simuler un succès
-    setShowSuccess(true);
-    toast.success('Message envoyé avec succès !');
-    
-    // Réinitialiser le formulaire après 3 secondes
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setShowSuccess(false);
+    try {
+      // Envoyer l'email avec EmailJS
+      await emailService.sendContactEmail(formData);
+      
+      setShowSuccess(true);
+      toast.success('Message envoyé avec succès ! 🎉');
+      
+      // Réinitialiser le formulaire après 2 secondes
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setShowSuccess(false);
+        setIsSubmitting(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      toast.error('Erreur lors de l\'envoi du message. Veuillez réessayer.');
       setIsSubmitting(false);
-    }, 3000);
+    }
   };
 
   const openWhatsApp = () => {
