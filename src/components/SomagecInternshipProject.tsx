@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Sparkles, Server, Settings2, MonitorCheck, X } from 'lucide-react';
 
-const galleryImages = Array.from({ length: 9 }, (_, i) => `/g${i + 1}.jpg`);
+const galleryImages = Array.from({ length: 8 }, (_, i) => `/certifications/g${i + 1}.png`);
 
 const SomagecInternshipProject: React.FC = () => {
   const [previewIndex, setPreviewIndex] = useState(0);

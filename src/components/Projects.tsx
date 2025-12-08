@@ -6,15 +6,10 @@ import CharityPlatformProject from './CharityPlatformProject';
 import FournissMaProject from './FournissMaProject';
 import DotNetMVCProject from './DotNetMVCProject';
 import MedicareProject from './MedicareProject';
+import SomagecInternshipProject from './SomagecInternshipProject';
+import ChifaaProject from './ChifaaProject';
 
 const projects = [
-  {
-    title: "Gestion de parc IT",
-    description: "Application web pour la gestion complète d'un parc informatique avec suivi des équipements et interventions.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80",
-    technologies: ["PHP", "AJAX", "Tailwind CSS", "HTML", "JS"],
-    delay: 100
-  },
   {
     title: "Gestion de voyage d'affaires (SkyTravel)",
     description: "Plateforme de gestion des voyages d'affaires permettant la réservation et le suivi des déplacements professionnels.",
@@ -35,11 +30,6 @@ const Projects: React.FC = () => {
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        <DarijaAIProject />
-        <CharityPlatformProject />
-        <FournissMaProject />
-        <DotNetMVCProject />
-        <MedicareProject />
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
@@ -50,6 +40,13 @@ const Projects: React.FC = () => {
             delay={project.delay}
           />
         ))}
+        <DotNetMVCProject />
+        <SomagecInternshipProject />
+        <MedicareProject />
+        <FournissMaProject />
+        <CharityPlatformProject />
+        <ChifaaProject />
+        <DarijaAIProject />
       </div>
     </AnimatedSection>
   );
