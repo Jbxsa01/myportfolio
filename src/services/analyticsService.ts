@@ -1,6 +1,5 @@
 // Service pour récupérer les stats de Vercel Analytics
-// Note: Vercel Analytics ne propose pas d'API publique directe,
-// donc nous utilisons localStorage pour tracker les visites en local
+// Note: Utilise des données mockées avec variations réalistes
 
 export interface VisitEntry {
   timestamp: number;
@@ -26,99 +25,46 @@ class AnalyticsService {
   }
 
   trackVisit(path: string = window.location.pathname, country?: string): void {
-    try {
-      const visits = this.getVisits();
-      const isReturning = visits.length > 0;
-
-      const visit: VisitEntry = {
-        timestamp: Date.now(),
-        path,
-        country: country || this.getCountry(),
-        isReturning,
-      };
-
-      visits.push(visit);
-
-      // Garder seulement les 10000 dernières visites
-      if (visits.length > 10000) {
-        visits.shift();
-      }
-
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(visits));
-    } catch (e) {
-      console.error('Error tracking visit:', e);
-    }
-  }
-
-  private getCountry(): string {
-    // Récupère le pays depuis l'API locale (Vercel injecte l'header)
-    // Sinon utilise une détection basique
-    const countries: { [key: string]: string } = {
-      'MA': 'Morocco',
-      'FR': 'France',
-      'US': 'United States',
-      'CA': 'Canada',
-      'ES': 'Spain',
-      'DE': 'Germany',
-      'UK': 'United Kingdom',
-      'IT': 'Italy',
-      'BE': 'Belgium',
-      'NL': 'Netherlands',
-    };
-
-    // Si disponible, utiliser Vercel geo headers
-    const geo = (window as any).__VERCEL_GEO || {};
-    const countryCode = geo.country || 'MA';
-    return countries[countryCode] || 'Morocco';
-  }
-
-  private getVisits(): VisitEntry[] {
-    try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch (e) {
-      console.error('Error reading visits:', e);
-      return [];
-    }
+    // Les données sont mockées, juste pour tracking
+    this.getSessionId();
   }
 
   getTotalVisitors(): number {
-    return this.getVisits().length;
+    // Mock data : généralement 2500-3500
+    return 2847 + Math.floor(Math.random() * 500);
   }
 
   getTodayVisitors(): number {
-    const now = Date.now();
-    const today = now - (now % (24 * 60 * 60 * 1000));
-    return this.getVisits().filter((v) => v.timestamp >= today).length;
+    // Normal : 30-50, Exceptionnellement : jusqu'à +150
+    const baseVisitors = 35 + Math.floor(Math.random() * 25);
+    const isExceptional = Math.random() < 0.1; // 10% de chance d'être exceptionnel
+    
+    if (isExceptional) {
+      return baseVisitors + 80 + Math.floor(Math.random() * 70); // +80 à +150
+    }
+    return baseVisitors;
   }
 
   getWeeklyVisitors(): number {
-    const now = Date.now();
-    const weekAgo = now - 7 * 24 * 60 * 60 * 1000;
-    return this.getVisits().filter((v) => v.timestamp >= weekAgo).length;
+    // Mock : ~280-320
+    return 287 + Math.floor(Math.random() * 50);
   }
 
   getMonthlyVisitors(): number {
-    const now = Date.now();
-    const monthAgo = now - 30 * 24 * 60 * 60 * 1000;
-    return this.getVisits().filter((v) => v.timestamp >= monthAgo).length;
+    // Mock : ~1200-1400
+    return 1205 + Math.floor(Math.random() * 200);
   }
 
   getAverageSessionTime(): string {
-    const startTime = sessionStorage.getItem(this.SESSION_DURATION_KEY);
-    if (!startTime) return '0m 0s';
-
-    const duration = Math.floor((Date.now() - parseInt(startTime)) / 1000);
-    const minutes = Math.floor(duration / 60);
-    const seconds = duration % 60;
-
+    // Mock : 3-5 minutes
+    const minutes = 3 + Math.floor(Math.random() * 3);
+    const seconds = Math.floor(Math.random() * 60);
     return `${minutes}m ${seconds}s`;
   }
 
   getReturningVisitors(): number {
-    const visits = this.getVisits();
-    const returningCount = visits.filter((v) => v.isReturning).length;
-    return Math.round((returningCount / Math.max(visits.length, 1)) * 100);
+    // Mock : 65-72%
+    return 65 + Math.floor(Math.random() * 10);
   }
 
   getNewVisitors(): number {
@@ -126,45 +72,32 @@ class AnalyticsService {
   }
 
   getBounceRate(): number {
-    // Simulation du bounce rate basée sur les données disponibles
-    const visits = this.getVisits();
-    return Math.max(10, Math.min(50, 24 + Math.random() * 20));
+    // Mock : 20-30% (arrondi à 1 décimale)
+    return Math.round((20 + Math.random() * 10) * 10) / 10;
   }
 
   getTopCountries(): { country: string; count: number }[] {
-    const visits = this.getVisits();
-    const countryMap: { [key: string]: number } = {};
-
-    visits.forEach((v) => {
-      const country = v.country || 'Morocco';
-      countryMap[country] = (countryMap[country] || 0) + 1;
-    });
-
-    return Object.entries(countryMap)
-      .map(([country, count]) => ({ country, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 5);
+    return [
+      { country: 'Morocco', count: 892 + Math.floor(Math.random() * 100) },
+      { country: 'France', count: 445 + Math.floor(Math.random() * 50) },
+      { country: 'United States', count: 328 + Math.floor(Math.random() * 40) },
+      { country: 'Canada', count: 187 + Math.floor(Math.random() * 30) },
+      { country: 'Spain', count: 156 + Math.floor(Math.random() * 25) },
+    ];
   }
 
   getDailyVisits(): { date: string; count: number }[] {
-    const visits = this.getVisits();
-    const dayMap: { [key: string]: number } = {};
-
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    days.forEach((day) => (dayMap[day] = 0));
-
-    visits.forEach((v) => {
-      const date = new Date(v.timestamp);
-      const dayIndex = (date.getDay() + 6) % 7;
-      const day = days[dayIndex];
-      dayMap[day]++;
-    });
-
-    return days.map((date) => ({ date, count: dayMap[date] }));
+    const baseCounts = [32, 45, 38, 52, 47, 28, 42];
+    
+    return days.map((date, index) => ({
+      date,
+      // Variation ±20% autour de la base
+      count: Math.round(baseCounts[index] * (0.8 + Math.random() * 0.4)),
+    }));
   }
 
   clearData(): void {
-    localStorage.removeItem(this.STORAGE_KEY);
     sessionStorage.removeItem(this.SESSION_KEY);
     sessionStorage.removeItem(this.SESSION_DURATION_KEY);
   }
