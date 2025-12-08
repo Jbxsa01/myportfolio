@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AnimatedSection from './AnimatedSection';
 import { Github, Linkedin, Mail, Send, Phone } from 'lucide-react';
 import { toast } from 'sonner';
+import { emailService } from '@/services/emailService';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,43 +24,20 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Sending form data:', formData);
-      
-      const response = await fetch('http://localhost/myportfolio/public/contact.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
-      
-      console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
-      
-      // Essayer de trouver un objet JSON valide dans la réponse
-      const jsonMatch = responseText.match(/\{.*\}/s);
-      if (jsonMatch) {
-        try {
-          const data = JSON.parse(jsonMatch[0]);
-          
-          if (data.success) {
-            toast.success("Message envoyé avec succès !");
-            setFormData({ name: '', email: '', subject: '', message: '' });
-          } else {
-            console.error('Server error:', data);
-            toast.error(data.message || "Une erreur est survenue");
-          }
-        } catch (error) {
-          console.error('Error parsing JSON:', error);
-          toast.error("Erreur de format de réponse du serveur");
-        }
-      } else {
-        console.error('No JSON found in response');
-        toast.error("Réponse invalide du serveur");
+      // Valider les champs
+      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+        toast.error('Veuillez remplir tous les champs');
+        setIsSubmitting(false);
+        return;
       }
+
+      // Envoyer l'email avec EmailJS
+      await emailService.sendContactEmail(formData);
+      
+      toast.success("Message envoyé avec succès ! 🎉");
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error('Fetch error:', error);
+      console.error('Erreur lors de l\'envoi:', error);
       toast.error("Une erreur est survenue lors de l'envoi du message");
     } finally {
       setIsSubmitting(false);

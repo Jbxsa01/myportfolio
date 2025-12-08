@@ -13,7 +13,7 @@ const DownloadCVButton: React.FC = () => {
     
     try {
       // Utiliser l'URL complète pour s'assurer que le bon fichier est téléchargé
-      const cvUrl = '/CV bjane Asmaa software engineer.pdf';
+      const cvUrl = '/Bjane Asmaa.pdf';
       
       // Vérifier si le fichier existe
       const response = await fetch(cvUrl);
@@ -28,7 +28,7 @@ const DownloadCVButton: React.FC = () => {
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'CV bjane Asmaa software engineer.pdf'; // Nom de fichier explicite
+      link.download = 'Bjane Asmaa.pdf'; // Nom de fichier explicite
       
       // Déclencher le téléchargement
       document.body.appendChild(link);

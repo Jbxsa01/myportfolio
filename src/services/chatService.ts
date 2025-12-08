@@ -18,9 +18,9 @@ export class ChatService {
       if (storedApiKey) {
         this.apiKey = storedApiKey;
       }
-      // En dernier recours, essayer de récupérer depuis les variables d'environnement
-      else if (process.env.OPENAI_API_KEY) {
-        this.apiKey = process.env.OPENAI_API_KEY;
+      // En dernier recours, essayer de récupérer depuis les variables d'environnement (Vite)
+      else if (import.meta.env.VITE_OPENAI_API_KEY) {
+        this.apiKey = import.meta.env.VITE_OPENAI_API_KEY;
         // Stocker dans localStorage pour les utilisations futures
         localStorage.setItem('openai_api_key', this.apiKey);
       }

@@ -26,22 +26,24 @@ const Navbar: React.FC<NavbarProps> = ({ onSettingsClick }) => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-3 px-4 sm:px-6 transition-all duration-300 backdrop-blur-sm",
-        scrolled ? "bg-white/85 shadow-md" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 py-3 px-4 sm:px-6 transition-all duration-500",
+        scrolled 
+          ? "bg-white shadow-xl" 
+          : "bg-white/80"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12">
             <img 
-              src="/logos/BJANE ASMAA Monogram Option 4.png" 
+              src="/logos/BJANE_ASMAA_Monogram_Option_4-removebg-preview.png" 
               alt="Bjane Asmaa Logo" 
               className="w-full h-full object-contain"
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-gray-900 dark:text-white font-semibold text-lg">Bjane Asmaa</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">Software Engineer & AI Specialist</span>
+            <span className="text-gray-900 font-semibold text-lg">Bjane Asmaa</span>
+            <span className="text-gray-600 text-sm font-medium">Software Engineer & AI Specialist</span>
           </div>
         </div>
         
@@ -66,16 +68,16 @@ const Navbar: React.FC<NavbarProps> = ({ onSettingsClick }) => {
             <MessageSquare size={18} />
             <span>Contact</span>
           </a>
-          <div className="flex items-center gap-2 ml-4 border-l pl-4 border-gray-200">
-            <a href="https://github.com/Jbxsa01" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
+          <div className="flex items-center gap-2 ml-4 border-l pl-4 border-gray-300">
+            <a href="https://github.com/Jbxsa01" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
               <Github size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/bjaneasmaa/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/bjaneasmaa/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
               <Linkedin size={20} />
             </a>
             <button 
               onClick={onSettingsClick}
-              className="text-gray-500 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
               aria-label="Paramètres d'apparence"
             >
               <Palette size={20} />

@@ -24,19 +24,24 @@ export const emailService = {
   async sendContactEmail(formData: ContactFormData): Promise<boolean> {
     try {
       const templateParams = {
-        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'ton_email@example.com',
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        reply_to: formData.email,
       };
+
+      console.log('Paramètres envoyés:', templateParams);
+      console.log('Service ID:', SERVICE_ID);
+      console.log('Template ID:', TEMPLATE_ID);
+      console.log('Public Key:', PUBLIC_KEY);
 
       const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
       console.log('Email envoyé avec succès:', result);
       return true;
-    } catch (error) {
-      console.error('Erreur lors de l\'envoi de l\'email:', error);
+    } catch (error: any) {
+      console.error('Erreur complète:', error);
+      console.error('Status:', error.status);
+      console.error('Text:', error.text);
       throw error;
     }
   },

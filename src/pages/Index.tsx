@@ -239,6 +239,9 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
   // Gérer les raccourcis clavier personnalisés
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Vérifier si la clé est définie
+      if (!e.key) return;
+      
       // Vérifier si c'est un raccourci personnalisé
       const key = e.key.toLowerCase();
       const ctrl = e.ctrlKey;
@@ -353,6 +356,9 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Si le code Konami est déjà activé, ne rien faire
       if (konamiActivated) return;
+      
+      // Vérifier si la clé est définie
+      if (!e.key) return;
       
       const key = e.key.toLowerCase();
       
