@@ -26,7 +26,7 @@ const SomagecInternshipProject: React.FC = () => {
           <div className="p-6">
             <h3 className="text-xl font-semibold mb-2">Soutenance de Stage Somagec</h3>
             <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-              🌟 Un chapitre important de mon parcours : optimisation IT, développement d'une application de gestion de parc, et gestion quotidienne des équipements.
+              Un chapitre important de mon parcours : optimisation IT, développement d'une application de gestion de parc, et gestion quotidienne des équipements.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <Badge variant="secondary" className="text-xs">Virtualisation</Badge>
