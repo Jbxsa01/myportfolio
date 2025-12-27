@@ -1,6 +1,8 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import ProjectCard from './ProjectCard';
+import EparkingProject from './EparkingProject';
+import MobileRagProject from './MobileRagProject';
 import DarijaAIProject from './DarijaAIProject';
 import CharityPlatformProject from './CharityPlatformProject';
 import FournissMaProject from './FournissMaProject';
@@ -47,6 +49,8 @@ const Projects: React.FC = () => {
         <CharityPlatformProject />
         <ChifaaProject />
         <DarijaAIProject />
+        <EparkingProject />
+        <MobileRagProject />
       </div>
     </AnimatedSection>
   );
