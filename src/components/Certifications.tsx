@@ -64,6 +64,19 @@ const eventParticipations: Certification[] = [
     skills: ['eHealth', 'Digital Health', 'Healthcare Innovation', 'Medical Technology', 'Health Information Systems'],
     level: 'intermediate'
   }
+  ,
+  {
+    id: 'mindfull-team-mern-lead',
+    title: 'Certification de participation — Mindfull Team (Lead MERN)',
+    issuer: 'Mindfull Team',
+    date: '2026',
+    image: '/WhatsApp Image 2026-01-05 at 12.13.27.jpeg',
+    category: 'completed',
+    progress: 100,
+    description: 'Certification de participation en tant que lead de l\'équipe MERN pour le projet Mindfull Team. Coordination de l\'équipe, conception frontend React, développement backend Node/Express et intégration de MongoDB.',
+    skills: ['React', 'Node.js', 'Express', 'MongoDB', 'Team Leadership', 'Project Coordination', 'MERN'],
+    level: 'advanced'
+  }
 ];
 
 const certifications: Certification[] = [
