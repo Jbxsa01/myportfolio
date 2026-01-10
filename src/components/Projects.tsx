@@ -10,6 +10,7 @@ import DotNetMVCProject from './DotNetMVCProject';
 import MedicareProject from './MedicareProject';
 import SomagecInternshipProject from './SomagecInternshipProject';
 import ChifaaProject from './ChifaaProject';
+import ForsatechProject from './ForsatechProject';
 
 const projects = [
   {
@@ -51,6 +52,7 @@ const Projects: React.FC = () => {
         <DarijaAIProject />
         <EparkingProject />
         <MobileRagProject />
+        <ForsatechProject />
       </div>
     </AnimatedSection>
   );
