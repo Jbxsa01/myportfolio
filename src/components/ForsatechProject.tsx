@@ -5,7 +5,6 @@ import { Badge } from './ui/badge';
 import { Sparkles, Globe, X } from 'lucide-react';
 
 const galleryImages = [
-  '/forsatech/2.png',
   '/forsatech/r1.png',
   '/forsatech/r3.png',
   '/forsatech/r4.png',
