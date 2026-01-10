@@ -17,7 +17,8 @@ const galleryImages = [
 ];
 
 const ForsatechProject: React.FC = () => {
-  const [previewIndex, setPreviewIndex] = useState(0);
+  const initialIndex = galleryImages.indexOf('/forsatech/r1.png');
+  const [previewIndex, setPreviewIndex] = useState(initialIndex >= 0 ? initialIndex : 0);
   const [fullscreenIndex, setFullscreenIndex] = useState<number | null>(null);
 
   const title = "L'ingénierie au service de l'employabilité";
