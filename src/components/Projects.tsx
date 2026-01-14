@@ -11,6 +11,7 @@ import MedicareProject from './MedicareProject';
 import SomagecInternshipProject from './SomagecInternshipProject';
 import ChifaaProject from './ChifaaProject';
 import ForsatechProject from './ForsatechProject';
+import MindfulteamProject from './MindfulteamProject';
 
 const projects = [
   {
@@ -50,6 +51,7 @@ const Projects: React.FC = () => {
         <CharityPlatformProject />
         <ChifaaProject />
         <DarijaAIProject />
+        <MindfulteamProject />
         <EparkingProject />
         <MobileRagProject />
         <ForsatechProject />
