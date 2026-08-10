@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const typingRef = useRef<HTMLSpanElement>(null);
   
   useEffect(() => {
-    const roles = ["Développeuse Web", "Software Engineer and AI", "Future Ingénieure", "Web Designer", "Programmeuse"];
+    const roles = ["AI Engineer @ Sopra Banking Software Morocco", "Software Engineer", "MLOps & Model Deployment", "Full‑stack Engineer"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -84,9 +84,9 @@ const Header: React.FC = () => {
               <span>portfolio.js</span>
             </div>
             <p className="typewriter">
-              const developer = new Engineer("Bjane Asmaa", "5IIR", 5);
+              const engineer = new Engineer("Asmaa Bjane", "AI Engineer", "Sopra Banking Software Morocco");
             </p>
-            <p className="mt-2 text-slate-500 text-xs">// AI et Dev Full Stack</p>
+            <p className="mt-2 text-slate-500 text-xs">// AI Engineer — MLOps, model deployment, backend & infra</p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 appear appear-delay-300">

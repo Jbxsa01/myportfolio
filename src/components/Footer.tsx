@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               />
               <h3 className="text-xl font-semibold">Asmaa Bjane</h3>
             </div>
-            <p className="text-white/70 text-sm">Software Engineer and AI</p>
+            <p className="text-white/70 text-sm">AI Engineer @ Sopra Banking Software Morocco</p>
           </div>
           
         </div>
