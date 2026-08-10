@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <div className="flex items-center gap-3 mb-3">
               <img 
-                src="/unnamed0-removebg-preview.png" 
+                src="/assets/images/unnamed0-removebg-preview.png" 
                 alt="Bjane Asmaa Logo" 
                 className="w-12 h-12 object-contain"
               />

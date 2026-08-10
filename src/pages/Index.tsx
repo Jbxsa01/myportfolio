@@ -701,7 +701,7 @@ const Index: React.FC<IndexProps> = ({ cvRef }) => {
               {/* CTA - Design Minimaliste Premium */}
               <div className="pt-8">
                 <a 
-                  href="/bjane Asmaa.pdf" 
+                  href="/assets/cv/Bjane Asmaa.pdf" 
                   download
                   className="group relative inline-flex items-center gap-6 border border-white/30 hover:border-white/60 px-10 py-6 transition-all duration-500 backdrop-blur-sm"
                 >

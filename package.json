@@ -1,18 +1,18 @@
 {
   "homepage": "https://Jbxsa01.github.io/Portfolio",
-  "name": "vite_react_shadcn_ts",
+  "name": "portfolio-bjane-asmaa",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

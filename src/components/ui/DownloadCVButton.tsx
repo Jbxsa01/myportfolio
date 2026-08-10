@@ -13,7 +13,7 @@ const DownloadCVButton: React.FC = () => {
     
     try {
       // Utiliser l'URL complète pour s'assurer que le bon fichier est téléchargé
-      const cvUrl = '/Bjane Asmaa.pdf';
+      const cvUrl = '/assets/cv/Bjane Asmaa.pdf';
       
       // Vérifier si le fichier existe
       const response = await fetch(cvUrl);

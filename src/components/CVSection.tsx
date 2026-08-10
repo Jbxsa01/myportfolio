@@ -323,7 +323,7 @@ const CVSection: React.FC = () => {
               Découvrez ma lettre de motivation qui présente ma vision professionnelle et mes objectifs de carrière.
             </p>
             <a 
-              href="/bjane asmaa cover letter.pdf" 
+              href="/assets/cv/bjane asmaa cover letter.pdf" 
               download
               className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
